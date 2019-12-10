@@ -23,6 +23,7 @@ export default new Router({
 //suport function
 function beforeEnterLogin(to, from, next) {
   console.log(1)
+  next()
   // let userID = Meteor.userId()
   // if (userID) {
   //   meteorCallDefaul("user.getByID", userID)
