@@ -1,1 +1,31 @@
-/* Add here all your CSS customizations */
+@media only screen and (min-width: 768px) {
+	/* Layout Fixed - Reseting Styles */
+	html.sidebar-left-big-icons.fixed .inner-wrapper,
+	html.sidebar-left-big-icons.fixed .sidebar-left,
+	html.sidebar-left-big-icons.fixed .content-body {
+		display: block;
+	}
+
+	/* Layout Fixed - Content Body */
+	html.sidebar-left-big-icons.fixed .content-body {
+		margin-left: 152px;
+	}
+
+	/* Layout Fixed - Page header */
+	html.sidebar-left-big-icons.fixed .page-header {
+		left: 152px;
+		margin: 0;
+		position: fixed;
+		right: 0;
+		top: 60px;
+	}
+
+	/* Layout Fixed - Sidebar Left Collapsed */
+	html.sidebar-left-big-icons.fixed.sidebar-left-collapsed .page-header {
+		left: 55px;
+	}
+
+	html.sidebar-left-big-icons.fixed.sidebar-left-collapsed .content-body {
+		margin-left: 55px;
+	}
+}

@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/LoginPage/LoginPage.vue'
-import WorkingPage from '@/components/WorkingPage/WorkingPage.vue'
-import Profile from '@/components/Profile/Profile.vue'
+import ManagerWorkingPage from '@/components/Manager/WorkingPage/WorkingPage.vue'
+import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
+import ManagerProfile from '@/components/Manager/Profile/Profile.vue'
+import StudentProfile from '@/components/Student/Profile/Profile.vue'
 
 Vue.use(Router)
 
@@ -21,7 +23,7 @@ export default new Router({
     },
     {
       path: '/manager',
-      component: WorkingPage,
+      component: ManagerWorkingPage,
       children: [{
           name: 'manager',
           path: '',
@@ -30,12 +32,12 @@ export default new Router({
         {
           name: 'managerProfile',
           path: 'profile',
-          component: Profile
+          component: ManagerProfile
         }
       ]
     }, {
       path: '/student',
-      component: WorkingPage,
+      component: StudentWorkingPage,
       children: [{
           name: 'student',
           path: '',
@@ -44,7 +46,7 @@ export default new Router({
         {
           name: 'profile',
           path: 'profile',
-          component: Profile
+          component: StudentProfile
         }
       ]
     }
