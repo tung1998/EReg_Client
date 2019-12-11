@@ -11,6 +11,7 @@ import SubjectManage from '@/components/Manager/SubjectManage/SubjectManage.vue'
 //import student component
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
 import StudentProfile from '@/components/Student/Profile/Profile.vue'
+import registerExam from '@/components/Student/registerExam/registerExam.vue'
 
 //manager
 
@@ -56,6 +57,10 @@ export default new Router({
         name: 'profile',
         path: 'profile',
         component: StudentProfile
+      },{
+        name: 'registerExam',
+        path: 'registerExam',
+        component: registerExam
       }]
     },
     {
