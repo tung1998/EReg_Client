@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/LoginPage/LoginPage.vue'
+import WorkingPage from '@/components/WorkingPage/WorkingPage.vue'
+import Profile from '@/components/Profile/Profile.vue'
 
 Vue.use(Router)
 
@@ -16,6 +18,35 @@ export default new Router({
       name: 'login',
       component: LoginPage,
       beforeEnter: beforeEnterLogin
+    },
+    {
+      path: '/manager',
+      component: WorkingPage,
+      children: [{
+          name: 'manager',
+          path: '',
+          redirect: 'profile'
+        },
+        {
+          name: 'managerProfile',
+          path: 'profile',
+          component: Profile
+        }
+      ]
+    }, {
+      path: '/student',
+      component: WorkingPage,
+      children: [{
+          name: 'student',
+          path: '',
+          redirect: 'profile'
+        },
+        {
+          name: 'profile',
+          path: 'profile',
+          component: Profile
+        }
+      ]
     }
   ]
 })
