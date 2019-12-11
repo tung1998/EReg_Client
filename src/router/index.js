@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import LoginPage from '@/components/LoginPage/LoginPage.vue'
+import ErrorPage from '@/components/ErrorPage/ErrorPage.vue'
 import ManagerWorkingPage from '@/components/Manager/WorkingPage/WorkingPage.vue'
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
 import ManagerProfile from '@/components/Manager/Profile/Profile.vue'
@@ -49,6 +50,11 @@ export default new Router({
           component: StudentProfile
         }
       ]
+    },
+    {
+      name: "error",
+      path: "*",
+      component: ErrorPage
     }
   ]
 })
