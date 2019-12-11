@@ -1,4 +1,4 @@
-<template src='./Profile.html'></template>
+<template src='./SubjectManage.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
