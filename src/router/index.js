@@ -42,7 +42,7 @@ export default new Router({
         component: ManagerProfile
       }, {
         name: 'subjectManage',
-        path: 'profile',
+        path: 'subjectManage',
         component: SubjectManage
       }]
     }, {
