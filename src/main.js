@@ -25,14 +25,18 @@ import './assets/css/custom.css';
 
 
 //import js
+// window.Jquery = require('jquery')
+// window.$ = require('jquery')
 // require('@/assets/vendor/modernizr/modernizr.js')
-require('@/assets/vendor/popper/umd/popper.min.js')
-require('@/assets/vendor/jquery/jquery.js')
+// require('@/assets/vendor/popper/umd/popper.min.js')
+// require('@/assets/vendor/jquery/jquery.js')
 // require('@/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')
 // require('@/assets/vendor/jquery-cookie/jquery-cookie.js')
 // require('@/assets/vendor/bootstrap/js/bootstrap.js')
 // require('@/assets/vendor/select2/js/select2.js')
 // require('@/assets/vendor/nanoscroller/nanoscroller.js')
+require('@/assets/js/theme.js')
+// require('@/assets/js/custom.js')
 
 
 

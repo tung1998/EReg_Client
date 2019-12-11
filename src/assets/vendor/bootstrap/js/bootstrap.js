@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('@/assets/vendor/popper/umd/popper.min.js')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -1538,7 +1538,8 @@
            * Popper - https://popper.js.org
            */
           if (typeof Popper === 'undefined') {
-            throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
+            throw new TypeError('Bootstrap dropdown require (https://popper.js.org)');
+            // throw new TypeError('Bootstrap dropdown require Popper.js (https://popper.js.org)');
           }
 
           var referenceElement = this._element;
@@ -2561,7 +2562,8 @@
          * Popper - https://popper.js.org
          */
         if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
+          // throw new TypeError('Bootstrap tooltips require(https://popper.js.org)');
+          // throw new TypeError('Bootstrap tooltips require Popper.js (https://popper.js.org)');
         } // private
 
 
