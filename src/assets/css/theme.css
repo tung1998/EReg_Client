@@ -5864,7 +5864,7 @@ html.sidebar-light:not(.dark) ul.nav-main li .nav-children li a:focus {
 
 /* Colors */
 .btn-primary {
-	background-color: #CCC;
+	background-color: #00acec;
 	border-color: #CCC #CCC #b3b3b3;
 	color: #FFF;
 }

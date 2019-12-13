@@ -1,4 +1,4 @@
-<template src='./StudentManage.html'></template>
+<template src='./UnAcceptedStudent.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
