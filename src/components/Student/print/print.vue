@@ -1,4 +1,4 @@
-<template src='./StudentManage.html'></template>
+<template src='./print.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>

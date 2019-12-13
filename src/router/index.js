@@ -11,7 +11,9 @@ import SubjectManage from '@/components/Manager/SubjectManage/SubjectManage.vue'
 //import student component
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
 import StudentProfile from '@/components/Student/Profile/Profile.vue'
+import StudentPrint from '@/components/Student/print/print.vue'
 import registerExam from '@/components/Student/registerExam/registerExam.vue'
+import StudentPage from '@/components/Student/page/page.vue'
 
 //manager
 
@@ -52,8 +54,12 @@ export default new Router({
       children: [{
         name: 'student',
         path: '',
-        redirect: 'profile'
-      }, {
+        redirect: 'page'
+      } ,{
+        name: 'page',
+        path: 'page',
+        component: StudentPage
+      } ,{
         name: 'profile',
         path: 'profile',
         component: StudentProfile
@@ -61,6 +67,11 @@ export default new Router({
         name: 'registerExam',
         path: 'registerExam',
         component: registerExam
+      }
+      ,{
+        name: 'print',
+        path: 'print',
+        component: StudentPrint
       }]
     },
     {
