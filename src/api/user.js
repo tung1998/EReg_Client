@@ -1,11 +1,12 @@
-import axios from 'axios'//library(copy)
+import axios from 'axios' //library(copy)
 
 export {
   getAllUser,
   checkUserPassword,
   getUserByID,
   getUserByAccessToken,
-  checkAccessToken
+  checkAccessToken,
+  deleteAccessToken
 }
 
 let BASE_USER = `${process.env.BASE_URL}/users`
@@ -13,33 +14,34 @@ let BASE_USER = `${process.env.BASE_URL}/users`
 
 //call api
 function getAllUser(accessToken) {
-  return axios.get(BASE_USER,{
+  return axios.get(BASE_USER, {
     headers: {
       accessToken
     },
   })
 }
 
-function getUserByID(id,accessToken){
+function getUserByID(id, accessToken) {
   let url = `${BASE_USER}/${id}`
-  return axios.get(url,{
-    headers: {
-      accessToken
-    },
-  })
-}
-function getUserByAccessToken(accessToken){
-  let url = `${BASE_USER}/${accessToken}`
-  return axios.get(url,{
+  return axios.get(url, {
     headers: {
       accessToken
     },
   })
 }
 
-function checkAccessToken(accessToken){
+function getUserByAccessToken(accessToken) {
+  let url = `${BASE_USER}/${accessToken}`
+  return axios.get(url, {
+    headers: {
+      accessToken
+    },
+  })
+}
+
+function checkAccessToken(accessToken) {
   let url = `${BASE_USER}/checkAccessToken`
-  return axios.get(url,{
+  return axios.get(url, {
     headers: {
       accessToken
     },
@@ -55,6 +57,15 @@ function checkUserPassword({
     username,
     password
   }, {
+    headers: {
+      accessToken
+    },
+  })
+}
+
+function deleteAccessToken(accessToken) {
+  let url = `${BASE_USER}/deleteAccesstoken`
+  return axios.post(url, {}, {
     headers: {
       accessToken
     },

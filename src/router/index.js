@@ -126,6 +126,7 @@ function beforeEnterLogin(to, from, next) {
   let accessToken = Vue.$cookies.get('accessToken')
   if (accessToken)
     checkAccessToken(accessToken).then(result => {
+      console.log(result)
       if (result.data && result.data.userType == 0) {
         next({
           name: 'managerProfile'
@@ -155,7 +156,9 @@ function beforeEnterManager(to, from, next) {
           name: 'studentProfile'
         })
     }).catch(handleError)
-  else next('login')
+  else next({
+    name: 'login'
+  })
 }
 
 function beforeEnterStudent(to, from, next) {
@@ -169,7 +172,9 @@ function beforeEnterStudent(to, from, next) {
           name: 'managerProfile'
         })
     }).catch(handleError)
-  else next('login')
+  else next({
+    name: 'login'
+  })
 }
 
 export default router
