@@ -1,14 +1,30 @@
-import axios from 'axios'
+import axios from 'axios'//library(copy)
 
 export {
   getAllUser,
-  checkUserPassword
+  checkUserPassword,
+  getUserByID
 }
 
 let BASE_USER = `${process.env.BASE_URL}/users`
 
-function getAllUser() {
-  return axios.get(BASE_USER)
+
+//call api
+function getAllUser(accessToken) {
+  return axios.get(BASE_USER,{
+    headers: {
+      accessToken
+    },
+  })
+}
+
+function getUserByID(id,accessToken){
+  let url = `${BASE_USER}/${id}`
+  return axios.get(url,{
+    headers: {
+      accessToken
+    },
+  })
 }
 
 function checkUserPassword({
