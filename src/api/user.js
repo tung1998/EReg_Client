@@ -3,7 +3,8 @@ import axios from 'axios'//library(copy)
 export {
   getAllUser,
   checkUserPassword,
-  getUserByID
+  getUserByID,
+  getUserByAccessToken
 }
 
 let BASE_USER = `${process.env.BASE_URL}/users`
@@ -26,7 +27,14 @@ function getUserByID(id,accessToken){
     },
   })
 }
-
+function getUserByAccessToken(accessToken){
+  let url = `${BASE_USER}/${accessToken}`
+  return axios.get(url,{
+    headers: {
+      accessToken
+    },
+  })
+}
 function checkUserPassword({
   username,
   password
