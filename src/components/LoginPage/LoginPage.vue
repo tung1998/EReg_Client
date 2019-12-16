@@ -28,9 +28,9 @@ function loginBtnClick() {
       if (result.data._id) {
         this.$cookies.set("accessToken", result.data.accessToken);
         if(result.data.userType==0)
-          this.$router.push({name: 'manager'})
+          this.$router.push({name: 'managerProfile'})
         if(result.data.userType==1)
-          this.$router.push({name: 'student'})
+          this.$router.push({name: 'studentProfile'})
         alertNotifyDefaul(_SUCCESS.loginSuccess);
       } else {
         alertNotifyDefaul(_ERRORS.wrongUsernameOrPassword);

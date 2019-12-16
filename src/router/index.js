@@ -126,7 +126,6 @@ function beforeEnterLogin(to, from, next) {
   let accessToken = Vue.$cookies.get('accessToken')
   if (accessToken)
     checkAccessToken(accessToken).then(result => {
-      console.log(result)
       if (result.data && result.data.userType == 0) {
         next({
           name: 'managerProfile'
@@ -149,7 +148,12 @@ function beforeEnterManager(to, from, next) {
   let accessToken = Vue.$cookies.get('accessToken')
   if (accessToken)
     checkAccessToken(accessToken).then(result => {
-      next()
+      if (result.data && result.data.userType == 0)
+        next()
+      if (result.data && result.data.userType == 1)
+        next({
+          name: 'studentProfile'
+        })
     }).catch(handleError)
   else next('login')
 }
@@ -158,7 +162,12 @@ function beforeEnterStudent(to, from, next) {
   let accessToken = Vue.$cookies.get('accessToken')
   if (accessToken)
     checkAccessToken(accessToken).then(result => {
-      next()
+      if (result.data && result.data.userType == 1)
+        next()
+      if (result.data && result.data.userType == 0)
+        next({
+          name: 'managerProfile'
+        })
     }).catch(handleError)
   else next('login')
 }
