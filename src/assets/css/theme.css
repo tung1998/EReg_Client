@@ -25,7 +25,9 @@ body {
 a {
 	color: #CCC;
 }
-
+p {
+	color: #000;
+}
 a:hover,
 a:focus {
 	color: #d9d9d9;
@@ -100,7 +102,7 @@ a:active {
 .page-header {
 	background: #171717;
 	border-bottom: none;
-	border-left: 1px solid #3A3A3A;
+	border-left: 1px solid rgb(0, 0, 0);
 	-webkit-box-shadow: 1px 3px 0 1px #CCCCCC;
 	box-shadow: 1px 3px 0 1px #CCCCCC;
 	height: 50px;
@@ -127,7 +129,7 @@ a:active {
 
 /* Layout Base - Sidebar Right */
 .sidebar-right {
-	background: #171717;
+	background: #000000;
 	bottom: 0;
 	margin-right: -300px;
 	min-height: 100vh;
@@ -5600,7 +5602,6 @@ html.sidebar-light:not(.dark) ul.nav-main li .nav-children li a:focus {
 .accordion a:hover {
 	text-decoration: none !important;
 }
-
 .accordion .card {
 	margin-top: 5px !important;
 }
@@ -6291,7 +6292,7 @@ html.dark .show>.dropdown-toggle.btn-default {
 }
 
 .call-to-action.call-to-action-grey .call-to-action-content p {
-	color: #777;
+	color: rgb(0, 0, 0);
 }
 
 .call-to-action.call-to-action-top {
@@ -6345,6 +6346,7 @@ html:not(.sidebar-left-collapsed).boxed .call-to-action .call-to-action-btn>span
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border: none;
+	color: #000000
 }
 
 .card+.card {
@@ -6482,7 +6484,9 @@ html:not(.sidebar-left-collapsed).boxed .call-to-action .call-to-action-btn>span
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 	border-radius: 5px;
 }
-
+.card-body p{
+	color: #000000
+}
 .card-body-nopadding {
 	padding: 0;
 }
