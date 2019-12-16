@@ -5,6 +5,11 @@
 const path = require('path')
 
 module.exports = {
+  devServer: {
+    allowedHosts: [
+      'localhost:3000',
+    ]
+  },
   dev: {
 
     // Paths
@@ -33,7 +38,10 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: true
+    cssSourceMap: true,
+    allowedHosts: [
+      'localhost:3000',
+    ]
   },
 
   build: {

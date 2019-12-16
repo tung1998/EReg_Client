@@ -1,9 +1,11 @@
-<template src='./LoginPage.html'>
-  
-</template>
+<template src='./LoginPage.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
+import { getAllUser, checkUserPassword } from "../../api/user";
+import { alertNotifyDefaul } from "../../helper/function";
+import { _ERRORS, _SUCCESS } from "../../helper/variable";
+
 export default {
   name: "Login",
   data() {
@@ -12,13 +14,28 @@ export default {
       password: ""
     };
   },
+
   methods: {
     loginClick: loginBtnClick
   }
 };
 
 function loginBtnClick() {
-  console.log(1);
+  let { username, password } = this;
+  checkUserPassword({ username, password })
+    .then(result => {
+      if (result.data.status) {
+        this.$cookies.set("accessToken", result.accessToken);
+        alertNotifyDefaul(_SUCCESS.loginSuccess);
+      } else {
+        console.log(alertNotifyDefaul(_ERRORS.wrongUsernameOrPassword));
+        console.log(result.data.message);
+      }
+    })
+    .catch(error => {
+      alertNotifyDefaul(_ERRORS.somethingWrong);
+      console.log(error);
+    });
 }
 </script>
 

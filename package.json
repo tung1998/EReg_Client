@@ -10,9 +10,17 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.590.0",
+    "axios": "^0.19.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
+    "pnotify": "^4.0.0",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.0",
+    "rijs": "^0.9.1",
+    "rijs.npm": "^2.0.0",
     "vue": "^2.5.2",
+    "vue-cookies": "^1.6.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

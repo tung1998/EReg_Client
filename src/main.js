@@ -18,34 +18,31 @@ import './assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css';
 /* @import 'assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css'; */
 /* @import 'assets/vendor/morris/morris.css'; */
 import "./assets/vendor/pnotify/pnotify.custom.css";
-/* Theme CSS */
 import './assets/css/theme.css';
-/* Theme Custom CSS */
 import './assets/css/custom.css';
 
 
 //import js
-// window.Jquery = require('jquery')
-// window.$ = require('jquery')
-// require('@/assets/vendor/modernizr/modernizr.js')
-// require('@/assets/vendor/popper/umd/popper.min.js')
-// require('@/assets/vendor/jquery/jquery.js')
-// require('@/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')
-// require('@/assets/vendor/jquery-cookie/jquery-cookie.js')
-// require('@/assets/vendor/bootstrap/js/bootstrap.js')
-// require('@/assets/vendor/select2/js/select2.js')
-// require('@/assets/vendor/nanoscroller/nanoscroller.js')
+window.jQuery = require('jquery')
+window.$ = require('jquery')
+require('bootstrap')
+window.PNotify = require('pnotify/dist/es/PNotify')
+// window.PNotifyButtons = require('pnotify/dist/es/PNotifyButtons')
+
+require('@/assets/vendor/pnotify/pnotify.custom')
 require('@/assets/js/theme.js')
 // require('@/assets/js/custom.js')
 
 
 
 Vue.config.productionTip = false
-
+Vue.use(require('vue-cookies'))
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
