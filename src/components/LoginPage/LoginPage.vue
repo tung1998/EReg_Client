@@ -21,11 +21,16 @@ export default {
 };
 
 function loginBtnClick() {
+  console.log(this)
   let { username, password } = this;
   checkUserPassword({ username, password })
     .then(result => {
-      if (result.data.status) {
-        this.$cookies.set("accessToken", result.accessToken);
+      if (result.data._id) {
+        this.$cookies.set("accessToken", result.data.accessToken);
+        if(result.data.userType==0)
+          this.$router.push({name: 'manager'})
+        if(result.data.userType==1)
+          this.$router.push({name: 'student'})
         alertNotifyDefaul(_SUCCESS.loginSuccess);
       } else {
         alertNotifyDefaul(_ERRORS.wrongUsernameOrPassword);

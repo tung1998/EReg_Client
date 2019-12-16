@@ -1,9 +1,11 @@
-// import '../assets/vendor/pnotify/pnotify.custom'
-// import PNotify from 'pnotify/dist/es/PNotify'
+import {
+  _ERRORS
+} from './variable'
 export {
   objectToArray,
   alertNotifyDefaul,
-  formatPhoneNumber
+  formatPhoneNumber,
+  handleError
 }
 
 function objectToArray(obj) {
@@ -73,4 +75,11 @@ function formatPhoneNumber(phone, symbol = '.') {
     default:
       return phone;
   }
+}
+
+
+function handleError(error) {
+  console.log(error)
+  alertNotifyDefaul(_ERRORS.somethingWrong)
+  return false
 }

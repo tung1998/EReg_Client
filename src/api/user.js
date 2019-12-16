@@ -4,7 +4,8 @@ export {
   getAllUser,
   checkUserPassword,
   getUserByID,
-  getUserByAccessToken
+  getUserByAccessToken,
+  checkAccessToken
 }
 
 let BASE_USER = `${process.env.BASE_URL}/users`
@@ -35,6 +36,16 @@ function getUserByAccessToken(accessToken){
     },
   })
 }
+
+function checkAccessToken(accessToken){
+  let url = `${BASE_USER}/checkAccessToken`
+  return axios.get(url,{
+    headers: {
+      accessToken
+    },
+  })
+}
+
 function checkUserPassword({
   username,
   password

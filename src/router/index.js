@@ -22,13 +22,16 @@ import registerExam from '@/components/Student/registerExam/registerExam.vue'
 import StudentPage from '@/components/Student/page/page.vue'
 
 //function 
-import{
-  getUserByAccesstoken
+import {
+  checkAccessToken
 } from '../api/user'
+import {
+  handleError
+} from '../helper/function'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [{
       path: '/',
@@ -39,6 +42,7 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LoginPage,
+      beforeEnter: beforeEnterLogin
     },
     {
       path: '/manager',
@@ -72,14 +76,16 @@ export default new Router({
         path: 'shiftManage',
         component: ShiftManage
       }, {
-        name: 'print',
-        path: 'print',
+        name: 'aprint',
+        path: 'aprint',
         component: Print
       }, {
         name: 'addShift',
         path: 'addShift',
         component: AddShift
-      }]
+      }],
+      beforeEnter: beforeEnterManager
+
     }, {
       path: '/student',
       component: StudentWorkingPage,
@@ -87,24 +93,24 @@ export default new Router({
         name: 'student',
         path: '',
         redirect: 'page'
-      } ,{
+      }, {
         name: 'page',
         path: 'page',
         component: StudentPage
-      } ,{
-        name: 'profile',
+      }, {
+        name: 'studentProfile',
         path: 'profile',
         component: StudentProfile
-      },{
+      }, {
         name: 'registerExam',
         path: 'registerExam',
         component: registerExam
-      }
-      ,{
+      }, {
         name: 'print',
         path: 'print',
         component: StudentPrint
-      }]
+      }],
+      beforeEnter: beforeEnterStudent
     },
     {
       name: "error",
@@ -115,12 +121,46 @@ export default new Router({
 })
 
 
-router.beforeEach((to, from, next) => {
-  getUserByAccesstoken(Vue.$cookies.get('accessToken')).then(result=>{
-    console.log(result)
-  }).catch(error=>{
-    console.log(error)
-  })
-})
-
 //checkPermistion
+function beforeEnterLogin(to, from, next) {
+  let accessToken = Vue.$cookies.get('accessToken')
+  if (accessToken)
+    checkAccessToken(accessToken).then(result => {
+      console.log(result)
+      if (result.data && result.data.userType == 0) {
+        next({
+          name: 'managerProfile'
+        })
+      }
+      if (result.data && result.data.userType == 1) {
+        next({
+          name: 'studentProfile'
+        })
+      }
+      next()
+    }).catch(error => {
+      handleError(error)
+      next()
+    })
+  else next()
+}
+
+function beforeEnterManager(to, from, next) {
+  let accessToken = Vue.$cookies.get('accessToken')
+  if (accessToken)
+    checkAccessToken(accessToken).then(result => {
+      next()
+    }).catch(handleError)
+  else next('login')
+}
+
+function beforeEnterStudent(to, from, next) {
+  let accessToken = Vue.$cookies.get('accessToken')
+  if (accessToken)
+    checkAccessToken(accessToken).then(result => {
+      next()
+    }).catch(handleError)
+  else next('login')
+}
+
+export default router
