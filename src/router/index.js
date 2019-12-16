@@ -21,7 +21,10 @@ import StudentPrint from '@/components/Student/print/print.vue'
 import registerExam from '@/components/Student/registerExam/registerExam.vue'
 import StudentPage from '@/components/Student/page/page.vue'
 
-//manager
+//function 
+import{
+  getUserByAccesstoken
+} from '../api/user'
 
 Vue.use(Router)
 
@@ -36,7 +39,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LoginPage,
-      beforeEnter: beforeEnterLogin
     },
     {
       path: '/manager',
@@ -112,23 +114,13 @@ export default new Router({
   ]
 })
 
-//suport function
-function beforeEnterLogin(to, from, next) {
-  console.log(1)
-  next()
-  // let userID = Meteor.userId()
-  // if (userID) {
-  //   meteorCallDefaul("user.getByID", userID)
-  //     .then(user => {
-  //       next({
-  //         name: 'user',
-  //         params: {
-  //           user: user.username
-  //         }
-  //       })
-  //     })
-  //     .catch(error => {
-  //       next('user')
-  //     })
-  // } else next()
-}
+
+router.beforeEach((to, from, next) => {
+  getUserByAccesstoken(Vue.$cookies.get('accessToken')).then(result=>{
+    console.log(result)
+  }).catch(error=>{
+    console.log(error)
+  })
+})
+
+//checkPermistion
