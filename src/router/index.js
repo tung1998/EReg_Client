@@ -54,35 +54,43 @@ const router = new Router({
       }, {
         name: 'managerProfile',
         path: 'profile',
-        component: ManagerProfile
+        component: ManagerProfile,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'studentManage',
         path: 'studentManage',
-        component: StudentManage
+        component: StudentManage,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'subjectManage',
         path: 'subjectManage',
-        component: SubjectManage
+        component: SubjectManage,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'acceptedStudent',
         path: 'acceptedStudent',
-        component: AcceptedStudent
+        component: AcceptedStudent,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'unAcceptedStudent',
         path: 'unAcceptedStudent',
-        component: UnAcceptedStudent
+        component: UnAcceptedStudent,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'shiftManage',
         path: 'shiftManage',
-        component: ShiftManage
+        component: ShiftManage,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'aprint',
         path: 'aprint',
-        component: Print
+        component: Print,
+        beforeEnter: beforeEnterManager
       }, {
         name: 'addShift',
         path: 'addShift',
-        component: AddShift
+        component: AddShift,
+        beforeEnter: beforeEnterManager
       }],
       beforeEnter: beforeEnterManager
 
@@ -96,19 +104,23 @@ const router = new Router({
       }, {
         name: 'page',
         path: 'page',
-        component: StudentPage
+        component: StudentPage,
+        beforeEnter: beforeEnterStudent
       }, {
         name: 'studentProfile',
         path: 'profile',
-        component: StudentProfile
+        component: StudentProfile,
+        beforeEnter: beforeEnterStudent
       }, {
         name: 'registerExam',
         path: 'registerExam',
-        component: registerExam
+        component: registerExam,
+        beforeEnter: beforeEnterStudent
       }, {
         name: 'print',
         path: 'print',
-        component: StudentPrint
+        component: StudentPrint,
+        beforeEnter: beforeEnterStudent
       }],
       beforeEnter: beforeEnterStudent
     },
@@ -151,10 +163,13 @@ function beforeEnterManager(to, from, next) {
     checkAccessToken(accessToken).then(result => {
       if (result.data && result.data.userType == 0)
         next()
-      if (result.data && result.data.userType == 1)
+      else if (result.data && result.data.userType == 1)
         next({
           name: 'studentProfile'
         })
+      else next({
+        name: 'login'
+      })
     }).catch(handleError)
   else next({
     name: 'login'
@@ -167,10 +182,13 @@ function beforeEnterStudent(to, from, next) {
     checkAccessToken(accessToken).then(result => {
       if (result.data && result.data.userType == 1)
         next()
-      if (result.data && result.data.userType == 0)
+      else if (result.data && result.data.userType == 0)
         next({
           name: 'managerProfile'
         })
+      else next({
+        name: 'login'
+      })
     }).catch(handleError)
   else next({
     name: 'login'
