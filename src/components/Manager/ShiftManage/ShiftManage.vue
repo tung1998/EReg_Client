@@ -2,11 +2,17 @@
 
 <!--<script src="./Login.js"></script>-->
 <script>
+import AddShiftModal from "./AddShift/AddShift";
+
 export default {
-  name: "WorkingPage",
+  name: "ShiftManage",
+  components: { AddShiftModal },
+  data() {
+    return {
+      tableData: []
+    };
+  }
 };
-
-
 </script>
 
 <style scoped>

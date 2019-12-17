@@ -3,7 +3,7 @@
 <!--<script src="./Login.js"></script>-->
 <script>
 export default {
-  name: "WorkingPage",
+  name: "AddShiftModal",
 };
 
 
