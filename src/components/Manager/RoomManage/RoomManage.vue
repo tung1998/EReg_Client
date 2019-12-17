@@ -3,16 +3,32 @@
 <!--<script src="./Login.js"></script>-->
 <script>
 import AddRoomModal from "./AddRoom/AddRoom.vue";
-
+import TableRoom from "./TableRoom/Table";
 export default {
   name: "RoomManage",
-  components: { AddRoomModal },
+  components: { AddRoomModal, TableRoom },
   data() {
     return {
-      tableData: []
+      RoomList: [],
+      onEditing: false
     };
-  }
+  },
+  methods: {
+    addRoom,
+  },
+  created
 };
+
+//methods
+function addRoom(data){
+  console.log(data)
+  console.log(this.RoomList)
+  this.RoomList.push(data)
+}
+//cycleHook
+function created() {
+  console.log(1);
+}
 </script>
 
 <style scoped>
