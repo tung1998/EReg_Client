@@ -14,17 +14,16 @@ export default {
   data() {
     return {
       Fields: ["STT", "Phòng", "Địa chỉ", "Số máy tính", ""],
-      TableRow
     };
   },
-  methods: {
-    deleteModule
+  methods:{
+    deleteRoom
   }
 };
 
 //methods
-function deleteModule(index) {
-  this.Modules.splice(index, 1);
+function deleteRoom(index) {
+  this.RoomList.splice(index, 1);
 }
 //support function
 </script>
