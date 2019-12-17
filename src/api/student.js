@@ -56,7 +56,7 @@ function createStudent({
   })
 }
 
-function updateStudent({
+function updateStudent(id,{
   studentID,
   name,
   dateOfBirth,
@@ -89,7 +89,7 @@ function deleteOneStudent(id, accessToken) {
   let url = `${BASE_STUDENT}/${id}`
   return axios.delete(url, {
     headers: {
-      accessTokens
+      accessToken
     },
   })
 }
