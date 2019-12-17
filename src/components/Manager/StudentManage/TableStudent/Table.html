@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="mb-3">
-        <a id="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" href="#addRoomModal" data-toggle="modal"
-          data-target="#addRoomModal">Thêm Phòng thi <i class="fas fa-plus"></i></a>
+        <a id="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" href="#addStudentModal" data-toggle="modal"
+          data-target="#addStudentModal">Thêm sinh viên <i class="fas fa-plus"></i></a>
       </div>
     </div>
     <div class="col-lg-6">
@@ -23,8 +23,8 @@
         </tr>
       </thead>
       <tbody>
-        <TableRow v-for="(Room,index) in RoomList" :key="index" :Room="Room" :index="index"
-          @deleteRoom="deleteRoom(index)" />
+        <TableRow v-for="(Student,index) in StudentList" :key="index" :Student="Student" :index="index"
+          @deleteStudent="deleteStudent(index)" />
       </tbody>
     </table>
   </div>

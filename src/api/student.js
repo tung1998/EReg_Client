@@ -8,19 +8,20 @@ export {
   deleteOneStudent
 }
 
-let BASE_USER = `${process.env.BASE_URL}/students`
+let BASE_STUDENT = `${process.env.BASE_URL}/students`
 
-function getAllStudent() {
-  return axios.get(BASE_USER,{
+function getAllStudent(accessToken) {
+  console.log(accessToken)
+  return axios.get(BASE_STUDENT, {
     headers: {
       accessToken
     },
   })
 }
 
-function getStudentByID(id,accessToken){
-  let url = `${BASE_USER}/${id}`
-  return axios.get(url,{
+function getStudentByID(id, accessToken) {
+  let url = `${BASE_STUDENT}/${id}`
+  return axios.get(url, {
     headers: {
       accessToken
     },
@@ -28,13 +29,27 @@ function getStudentByID(id,accessToken){
 }
 
 function createStudent({
+  studentID,
   name,
-  student_id,
   dateOfBirth,
+  sex,
+  major,
+  classMajor,
+  address,
   phone,
   email
-}, accessToken){
-    return axios.post(BASE_USER,{
+}, accessToken) {
+  return axios.post(BASE_STUDENT, {
+    studentID,
+    name,
+    dateOfBirth,
+    sex,
+    major,
+    classMajor,
+    address,
+    phone,
+    email
+  }, {
     headers: {
       accessToken
     },
@@ -42,23 +57,37 @@ function createStudent({
 }
 
 function updateStudent({
+  studentID,
   name,
-  student_id,
   dateOfBirth,
+  sex,
+  major,
+  classMajor,
+  address,
   phone,
   email
-}, accessToken){
-  let url = `${BASE_USER}/${id}`
-    return axios.put(url,{
+}, accessToken) {
+  let url = `${BASE_STUDENT}/${id}`
+  return axios.put(url, {
+    studentID,
+    name,
+    dateOfBirth,
+    sex,
+    major,
+    classMajor,
+    address,
+    phone,
+    email
+  }, {
     headers: {
       accessToken
     },
   })
 }
 
-function deleteOneStudent(id,accessToken){
-  let url = `${BASE_USER}/${id}`
-  return axios.delete(url,{
+function deleteOneStudent(id, accessToken) {
+  let url = `${BASE_STUDENT}/${id}`
+  return axios.delete(url, {
     headers: {
       accessTokens
     },

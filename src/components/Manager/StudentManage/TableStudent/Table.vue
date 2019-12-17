@@ -9,21 +9,21 @@ export default {
     TableRow
   },
   props: {
-    RoomList: Array
+    StudentList: Array
   },
   data() {
     return {
-      Fields: ["STT", "Phòng", "Địa chỉ", "Số máy tính", ""],
+      Fields: ["STT", "MSSV", "Họ tên", "Ngày sinh", "Giới tính", "Khoa", "Lớp khóa học", ""],
     };
   },
   methods:{
-    deleteRoom
+    deleteStudent
   }
 };
 
 //methods
-function deleteRoom(index) {
-  this.RoomList.splice(index, 1);
+function deleteStudent(index) {
+  this.StudentList.splice(index, 1);
 }
 //support function
 </script>

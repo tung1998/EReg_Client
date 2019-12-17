@@ -1,42 +1,69 @@
-<template src='./AddRoom.html'></template>
+<template src='./AddStudent.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
 import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
-import { createRoom } from "../../../../api/room";
+import { createStudent } from "../../../../api/student";
 export default {
-  name: "AddRoomtModal",
+  name: "AddStudenttModal",
   data() {
     return {
-      room: {
+      student: {
+        studentID: "",
         name: "",
+        dateOfBirth: "",
+        sex: "",
+        major: "",
+        classMajor: "",
         address: "",
-        computerQuantity: ""
+        phone: "",
+        email: ""
       }
     };
   },
   methods: {
-    addNewRoom,
+    addNewStudent,
     resetInput
   }
 };
 
-function addNewRoom() {
-  if (this.room.name && this.room.address && this.room.computerQuantity) {
-    createRoom(
+function addNewStudent() {
+  if (
+    this.student.studentID &&
+    this.student.name &&
+    this.student.dateOfBirth &&
+    this.student.sex &&
+    this.student.major &&
+    this.student.classMajor
+  ) {
+    createStudent(
       {
-        name: this.room.name,
-        address: this.room.address,
-        computerQuantity: Number(this.room.computerQuantity)
+        studentID: this.student.studentID,
+        name: this.student.name,
+        dateOfBirth: this.student.dateOfBirth,
+        sex: this.student.sex,
+        major: this.student.major,
+        classMajor: this.student.classMajor,
+        address: this.student.address,
+        phone: this.student.phone,
+        email: this.student.email
       },
       this.$cookies.get("accessToken")
     )
       .then(result => {
-        this.$emit("addRoom", result.data);
-        this.room.name = "";
-        this.room.address = "";
-        this.room.computerQuantity = 0;
+        console.log(result);
+        this.$emit("addStudent", result.data);
+        this.student.studentID = "";
+        this.student.name = "";
+        this.student.dateOfBirth = "";
+        this.student.address = "";
+        this.student.sex = "";
+        this.student.major = "";
+        this.student.classMajor = "";
+        this.student.address = "";
+        this.student.phone = "";
+        this.student.email = "";
         alertNotifyDefaul(_SUCCESS.createSuccess);
       })
       .catch(handleError);
@@ -44,9 +71,16 @@ function addNewRoom() {
 }
 
 function resetInput() {
-  this.room.name = "";
-  this.room.address = "";
-  this.room.computerQuantity = 0;
+  this.student.studentID = "";
+  this.student.name = "";
+  this.student.dateOfBirth = "";
+  this.student.address = "";
+  this.student.sex = "";
+  this.student.major = "";
+  this.student.classMajor = "";
+  this.student.address = "";
+  this.student.phone = "";
+  this.student.email = "";
 }
 </script>
 

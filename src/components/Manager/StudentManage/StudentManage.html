@@ -6,11 +6,11 @@
         <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
       </div>
 
-      <h2 class="card-title">QUẢN LÝ PHÒNG THI</h2>
+      <h2 class="card-title">QUẢN LÝ SINH VIÊN</h2>
     </header>
     <div class="card-body">
-      <TableRoom :RoomList="RoomList" />
+      <TableStudent :StudentList="StudentList" />
     </div>
   </section>
-  <AddRoomModal @addRoom="addRoom" />
+  <AddStudentModal @addStudent="addStudent" />
 </div>

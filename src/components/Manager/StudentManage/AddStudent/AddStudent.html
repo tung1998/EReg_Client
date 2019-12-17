@@ -1,12 +1,12 @@
-<div id="addRoomModal" tabindex="-1" role="dialog" class="modal fade bd-example-modal-lg">
+<div id="addStudentModal" tabindex="-1" role="dialog" class="modal fade bd-example-modal-lg">
   <div class="modal-dialog modal-lg" role="document">
     <section class="card modal-content">
       <header class="card-header">
-        <h2 class="card-title">THÊM PHÒNG THI</h2>
+        <h2 class="card-title">THÊM SINH VIÊN</h2>
       </header>
       <div class="card-body">
         <div class="form-group row">
-          <label class="col-lg-3 control-label text-lg-right pt-2">Tên phòng</label>
+          <label class="col-lg-3 control-label text-lg-right pt-2">Mã sinh viên <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
               <span class="input-group-prepend">
@@ -14,7 +14,77 @@
                   <i class="far fa-clock"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="room.name">
+              <input type="text" class="form-control" v-model="student.studentID">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Họ và tên <span class="required">*</span></label>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="far fa-clock"></i>
+                </span>
+              </span>
+              <input type="text" class="form-control" v-model="student.name">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Ngày sinh <span class="required">*</span></label>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>
+              <input type="date" class="form-control" v-model="student.dateOfBirth">
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Giới tính <span class="required">*</span></label>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>
+              <input type="text" class="form-control" v-model="student.sex">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Khoa <span class="required">*</span></label>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>
+              <input type="text" class="form-control" v-model="student.major">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Lớp khóa học <span class="required">*</span></label>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>
+              <input type="text" class="form-control" v-model="student.classMajor">
             </div>
           </div>
         </div>
@@ -25,16 +95,16 @@
             <div class="input-group">
               <span class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="far fa-clock"></i>
+                  <i class="fas fa-calendar-alt"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="room.address">
+              <input type="text" class="form-control" v-model="student.address">
             </div>
           </div>
         </div>
 
         <div class="form-group row">
-          <label class="col-lg-3 control-label text-lg-right pt-2">Số máy tính</label>
+          <label class="col-lg-3 control-label text-lg-right pt-2">Số điện thoại</label>
           <div class="col-lg-6">
             <div class="input-group">
               <span class="input-group-prepend">
@@ -42,15 +112,30 @@
                   <i class="fas fa-calendar-alt"></i>
                 </span>
               </span>
-              <input type="number" class="form-control" v-model="room.computerQuantity">
+              <input type="text" class="form-control" v-model="student.phone">
             </div>
           </div>
         </div>
+
+        <div class="form-group row">
+            <label class="col-lg-3 control-label text-lg-right pt-2">Email</label>
+            <div class="col-lg-6">
+              <div class="input-group">
+                <span class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-calendar-alt"></i>
+                  </span>
+                </span>
+                <input type="text" class="form-control" v-model="student.email">
+              </div>
+            </div>
+          </div>
+
       </div>
       <footer class="card-footer">
         <div class="row justify-content-end">
           <div class="col-sm-9">
-            <button class="btn btn-primary" id="submit" @click="addNewRoom">Thêm mới</button>
+            <button class="btn btn-primary" id="submit" @click="addNewStudent">Thêm mới</button>
             <button type="reset" class="btn btn-default" @click="resetInput">Reset</button>
           </div>
         </div>

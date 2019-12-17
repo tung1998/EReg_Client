@@ -1,38 +1,39 @@
-<template src='./RoomManage.html'></template>
+<template src='./StudentManage.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
-import AddRoomModal from "./AddRoom/AddRoom.vue";
-import TableRoom from "./TableRoom/Table";
-import { getAllRoom } from "../../../api/room";
+import AddStudentModal from "./AddStudent/AddStudent.vue";
+import TableStudent from "./TableStudent/Table";
+import { getAllStudent } from "../../../api/student";
 import { handleError } from "../../../helper/function";
 
 let accessToken;
 
 export default {
-  name: "RoomManage",
-  components: { AddRoomModal, TableRoom },
+  name: "StudentManage",
+  components: { AddStudentModal, TableStudent },
   data() {
     return {
-      RoomList: [],
+      StudentList: [],
       onEditing: false
     };
   },
   methods: {
-    addRoom
+    addStudent
   },
   created
 };
 
 //methods
-function addRoom(data) {
-  this.RoomList.push(data);
+function addStudent(data) {
+  this.StudentList.push(data);
 }
 //cycleHook
 function created() {
-  getAllRoom(this.$cookies.get("accessToken"))
+  getAllStudent(this.$cookies.get("accessToken"))
     .then(result => {
-      this.RoomList = result.data;
+      console.log(result)
+      this.StudentList = result.data;
     })
     .catch(handleError);
 }

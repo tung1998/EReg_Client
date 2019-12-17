@@ -2,15 +2,25 @@
   <td class="index">
     {{index}}
   </td>
+  <td class="studentID">
+    <input type="text" class="form-control input-block" v-model="rowData.studentID" name="studentID" />
+  </td>
   <td class="name">
     <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
   </td>
-  <td class="address">
-    <input type="text" class="form-control input-block" v-model="rowData.address" name="address" />
+  <td class="dateOfBirth">
+    <input type="date" class="form-control input-block" v-model="rowData.dateOfBirth" name="dateOfBirth" />
   </td>
-  <td class="computerQuantity">
-    <input type="number" class="form-control input-block" v-model="rowData.computerQuantity" name="computerQuantity" />
+  <td class="sex">
+    <input type="text" class="form-control input-block" v-model="rowData.sex" name="sex" />
   </td>
+  <td class="major">
+    <input type="text" class="form-control input-block" v-model="rowData.major" name="major" />
+  </td>
+  <td class="classMajor">
+    <input type="text" class="form-control input-block" v-model="rowData.classMajor" name="classMajor" />
+  </td>
+  
   <td class="actions text-center">
     <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
       <i class="fas fa-save"></i>
@@ -22,9 +32,12 @@
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
-  <td class="name">{{Room.name}}</td>
-  <td class="address">{{Room.address}}</td>
-  <td class="computerQuantity">{{Room.computerQuantity}}</td>
+  <td class="studentID">{{Student.studentID}}</td>
+  <td class="name">{{Student.name}}</td>
+  <td class="dateOfBirth">{{Student.dateOfBirth}}</td>
+  <td class="sex">{{Student.sex}}</td>
+  <td class="major">{{Student.major}}</td>
+  <td class="address">{{Student.classMajor}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
       <i class="fas fa-pencil-alt"></i>
