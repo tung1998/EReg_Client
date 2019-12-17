@@ -12,8 +12,8 @@ import SubjectManage from '@/components/Manager/SubjectManage/SubjectManage.vue'
 import AcceptedStudent from '@/components/Manager/AcceptedStudent/AcceptedStudent.vue'
 import UnAcceptedStudent from '@/components/Manager/UnAcceptedStudent/UnAcceptedStudent.vue'
 import ShiftManage from '@/components/Manager/ShiftManage/ShiftManage.vue'
+import RoomManage from '@/components/Manager/RoomManage/RoomManage.vue'
 import Print from '@/components/Manager/Print/Print.vue'
-import AddShift from '@/components/Manager/AddShift/AddShift.vue'
 //import student component
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
 import StudentProfile from '@/components/Student/Profile/Profile.vue'
@@ -82,14 +82,14 @@ const router = new Router({
         component: ShiftManage,
         beforeEnter: beforeEnterManager
       }, {
+        name: 'RoomManage',
+        path: 'RoomManage',
+        component: RoomManage,
+        beforeEnter: beforeEnterManager
+      }, {
         name: 'aprint',
         path: 'aprint',
         component: Print,
-        beforeEnter: beforeEnterManager
-      }, {
-        name: 'addShift',
-        path: 'addShift',
-        component: AddShift,
         beforeEnter: beforeEnterManager
       }],
       beforeEnter: beforeEnterManager

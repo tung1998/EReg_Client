@@ -9,8 +9,8 @@ import './assets/vendor/bootstrap/css/bootstrap.css';
 import './assets/vendor/font-awesome/css/fontawesome-all.min.css';
 import './assets/vendor/select2/css/select2.css';
 import './assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css';
-/* @import 'assets/vendor/magnific-popup/magnific-popup.css'; */
-/* @import 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css'; */
+import './assets/vendor/magnific-popup/magnific-popup.css';
+import './assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css'
 /* Specific Page /vendor CSS */
 
 /* @import 'assets/vendor/jquery-ui/jquery-ui.css'; */
@@ -25,11 +25,14 @@ import './assets/css/custom.css';
 //import js
 window.jQuery = require('jquery')
 window.$ = require('jquery')
+// require('modernizr')
 require('bootstrap')
+// require('magnific-popup')
 window.PNotify = require('pnotify/dist/es/PNotify')
 // window.PNotifyButtons = require('pnotify/dist/es/PNotifyButtons')
-
+// require('@/assets/vendor/magnific-popup/jquery.magnific-popup')
 require('@/assets/vendor/pnotify/pnotify.custom')
+require('@/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker')
 require('@/assets/js/theme.js')
 // require('@/assets/js/custom.js')
 

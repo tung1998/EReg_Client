@@ -1,12 +1,12 @@
-<template src='./ShiftManage.html'></template>
+<template src='./RoomManage.html'></template>
 
 <!--<script src="./Login.js"></script>-->
 <script>
-import AddShiftModal from "./AddShift/AddShift.vue";
+import AddRoomModal from "./AddRoom/AddRoom.vue";
 
 export default {
-  name: "ShiftManage",
-  components: { AddShiftModal },
+  name: "RoomManage",
+  components: { AddRoomModal },
   data() {
     return {
       tableData: []

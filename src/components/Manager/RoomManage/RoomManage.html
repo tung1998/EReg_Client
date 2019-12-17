@@ -6,35 +6,16 @@
         <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
       </div>
 
-      <h2 class="card-title">QUẢN LÝ CA THI</h2>
+      <h2 class="card-title">QUẢN LÝ PHÒNG THI</h2>
     </header>
     <div class="card-body">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="mb-3">
-            <a id="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" href="#addShiftModal" data-toggle="modal" data-target="#addShiftModal">Thêm ca thi <i
-                class="fas fa-plus"></i></a>
-          </div>
-        </div>
-      </div>
       <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
         <div class="row">
-          <div class="col-lg-6">
-            <div class="dataTables_length" id="datatable-editable_length"><label><select
-                  name="datatable-editable_length" aria-controls="datatable-editable"
-                  class="form-control form-control-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                  <option value="10">10</option>
-                  <option value="25">25</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select><span class="select2 select2-container select2-container--bootstrap" dir="ltr"
-                  style="width: 75px;"><span class="selection"><span class="select2-selection select2-selection--single"
-                      role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                      aria-labelledby="select2-datatable-editable_length-wn-container"><span
-                        class="select2-selection__rendered" id="select2-datatable-editable_length-wn-container"
-                        title="10">10</span><span class="select2-selection__arrow" role="presentation"><b
-                          role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                    aria-hidden="true"></span></span></label></div>
+          <div class="col-sm-6">
+            <div class="mb-3">
+              <a id="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" href="#addRoomModal"
+                data-toggle="modal" data-target="#addRoomModal">Thêm Phòng thi <i class="fas fa-plus"></i></a>
+            </div>
           </div>
           <div class="col-lg-6">
             <div id="datatable-editable_filter" class="dataTables_filter"><label><input type="search"
@@ -174,5 +155,5 @@
       </div>
     </div>
   </section>
-  <AddShiftModal/>
+  <AddRoomModal />
 </div>
