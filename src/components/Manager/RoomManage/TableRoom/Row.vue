@@ -30,7 +30,6 @@ export default {
 //methods
 function rowClick() {}
 function rowSaveClick() {
-  console.log(this.Room._id, this.rowData, this.$cookies.get("accessToken"))
   updateRoom(this.Room._id, this.rowData, this.$cookies.get("accessToken"))
     .then(result => {
       this.Room = this.rowData;
