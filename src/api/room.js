@@ -10,7 +10,7 @@ export {
 
 let BASE_ROOM = `${process.env.BASE_URL}/rooms`
 
-function getAllRoom() {
+function getAllRoom(accessToken) {
   return axios.get(BASE_ROOM, {
     headers: {
       accessToken
@@ -43,13 +43,23 @@ function createRoom({
   })
 }
 
-function updateRoom({
-  room_id,
-  buiding,
-  seats
+function updateRoom(id, {
+  name,
+  address,
+  computerQuantity
 }, accessToken) {
   let url = `${BASE_ROOM}/${id}`
+  console.log(url,{
+    name,
+    address,
+    computerQuantity
+  }, accessToken)
+  console.log(axios)
   return axios.put(url, {
+    name,
+    address,
+    computerQuantity
+  }, {
     headers: {
       accessToken
     },

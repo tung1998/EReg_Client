@@ -24,7 +24,7 @@
       </thead>
       <tbody>
         <TableRow v-for="(Room,index) in RoomList" :key="index" :Room="Room" :index="index"
-          @deleteModule="deleteModule(index)" />
+          @deleteRoom="deleteRoom(index)" />
       </tbody>
     </table>
   </div>

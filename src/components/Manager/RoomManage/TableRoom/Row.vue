@@ -1,15 +1,17 @@
 <template src='./Row.html'></template>
 
 <script>
-import { alertNotifyDefaul } from "../../../../helper/function";
+import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
+import { deleteOneRoom, updateRoom } from "../../../../api/room";
 export default {
   name: "TableRoomManage",
   props: {
     Room: {
       type: Object,
       default: {}
-    }
+    },
+    index: Number
   },
   data() {
     return {
@@ -23,54 +25,34 @@ export default {
     rowCancelClick,
     rowEditClick,
     rowRemoveClick
-  },
-  computed: {
-    getModuleName,
-    getModuleType
   }
 };
-//computed
-function getModuleName() {
-  return this.Modules.filter(item => item.value == this.rowData.component)[0]
-    .name;
-}
-function getModuleType() {
-  if (this.Module.type == 0) return "Module đơn";
-  else if (this.Module.type == 1) return "Module cha";
-  else return "Module con";
-}
 //methods
 function rowClick() {}
 function rowSaveClick() {
-  meteorCallDefaul("module.update", {
-    _id: this.Module._id,
-    data: this.rowData
-  })
+  console.log(this.Room._id, this.rowData, this.$cookies.get("accessToken"))
+  updateRoom(this.Room._id, this.rowData, this.$cookies.get("accessToken"))
     .then(result => {
-      this.Module = this.rowData;
+      this.Room = this.rowData;
       this.onEditing = !this.onEditing;
       alertNotifyDefaul(_SUCCESS.updateSuccess);
     })
-    .catch(error => {
-      alertNotifyDefaul(_ERRORS.somethingWrong);
-    });
+    .catch(handleError);
 }
 function rowCancelClick() {
-  this.rowData = { ...this.Module };
+  this.rowData = { ...this.Room };
   this.onEditing = !this.onEditing;
 }
 function rowEditClick() {
   this.onEditing = !this.onEditing;
 }
 function rowRemoveClick() {
-  meteorCallDefaul("module.delete", this.Module._id)
+  deleteOneRoom(this.Room._id, this.$cookies.get("accessToken"))
     .then(result => {
-      this.$emit("deleteModule");
+      this.$emit("deleteRoom");
       alertNotifyDefaul(_SUCCESS.deleteSuccess);
     })
-    .catch(error => {
-      alertNotifyDefaul(_ERRORS.somethingWrong);
-    });
+    .catch(handleError);
 }
 //suportfunction
 </script>
