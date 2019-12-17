@@ -1,15 +1,15 @@
 <tr v-if="onEditing" role="row" class="odd">
-    <td class="STT">
-        <input type="text" class="form-control input-block" v-model="rowData.STT" name="STT" />
+    <td class="index">
+        <input type="number" class="form-control input-block" v-model="rowData.index" name="index" />
     </td>
-    <td class="RoomNumber">
-        <input type="text" class="form-control input-block" v-model="rowData.RoomNumber" name="RoomNumber" />
+    <td class="roomNumber">
+        <input type="text" class="form-control input-block" v-model="rowData.roomNumber" name="roomNumber" />
     </td>
-    <td class="Address">
-        <input type="text" class="form-control input-block" v-model="rowData.Address" name="Address" />
+    <td class="address">
+        <input type="text" class="form-control input-block" v-model="rowData.address" name="address" />
     </td>
-    <td class="ComputerQuantity">
-        <input type="number" class="form-control input-block" v-model="rowData.ComputerQuantity" name="ComputerQuantity" />
+    <td class="computerQuantity">
+        <input type="number" class="form-control input-block" v-model="rowData.computerQuantity" name="computerQuantity" />
     </td>
     <td class="actions text-center">
         <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
@@ -21,10 +21,10 @@
     </td>
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
-    <td class="STT">{{Room.STT}}</td>
-    <td class="RoomNumber">{{Room.RoomNumber}}</td>
-    <td class="Address">{{Room.Address}}</td>
-    <td class="ComputerQuantity">{{Room.ComputerQuantity}}</td>
+    <td class="index">{{Room.index}}</td>
+    <td class="roomNumber">{{Room.roomNumber}}</td>
+    <td class="address">{{Room.address}}</td>
+    <td class="computerQuantity">{{Room.computerQuantity}}</td>
     <td class="actions text-center">
         <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
             <i class="fas fa-pencil-alt"></i>

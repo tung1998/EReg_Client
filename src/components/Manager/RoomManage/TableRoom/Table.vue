@@ -9,7 +9,7 @@ export default {
     TableRow
   },
   props: {
-    Data: Array
+    RoomList: Array
   },
   data() {
     return {

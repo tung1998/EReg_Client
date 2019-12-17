@@ -8,19 +8,19 @@ export {
   deleteOneRoom
 }
 
-let BASE_USER = `${process.env.BASE_URL}/rooms`
+let BASE_ROOM = `${process.env.BASE_URL}/rooms`
 
 function getAllRoom() {
-  return axios.get(BASE_USER,{
+  return axios.get(BASE_ROOM, {
     headers: {
       accessToken
     },
   })
 }
 
-function getRoomByID(id,accessToken){
-  let url = `${BASE_USER}/${id}`
-  return axios.get(url,{
+function getRoomByID(id, accessToken) {
+  let url = `${BASE_ROOM}/${id}`
+  return axios.get(url, {
     headers: {
       accessToken
     },
@@ -28,11 +28,15 @@ function getRoomByID(id,accessToken){
 }
 
 function createRoom({
-  room_id,
-  buiding,
-  seats
-}, accessToken){
-    return axios.post(BASE_USER,{
+  name,
+  address,
+  computerQuantity
+}, accessToken) {
+  return axios.post(BASE_ROOM, {
+    name,
+    address,
+    computerQuantity
+  }, {
     headers: {
       accessToken
     },
@@ -43,18 +47,18 @@ function updateRoom({
   room_id,
   buiding,
   seats
-}, accessToken){
-  let url = `${BASE_USER}/${id}`
-    return axios.put(url,{
+}, accessToken) {
+  let url = `${BASE_ROOM}/${id}`
+  return axios.put(url, {
     headers: {
       accessToken
     },
   })
 }
 
-function deleteOneRoom(id,accessToken){
-  let url = `${BASE_USER}/${id}`
-  return axios.delete(url,{
+function deleteOneRoom(id, accessToken) {
+  let url = `${BASE_ROOM}/${id}`
+  return axios.delete(url, {
     headers: {
       accessToken
     },

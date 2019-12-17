@@ -21,8 +21,6 @@ export default {
 
 //methods
 function addRoom(data){
-  console.log(data)
-  console.log(this.RoomList)
   this.RoomList.push(data)
 }
 //cycleHook
