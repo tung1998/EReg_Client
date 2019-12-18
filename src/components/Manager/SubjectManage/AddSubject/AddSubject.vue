@@ -6,13 +6,12 @@ import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
 import { createSubject } from "../../../../api/subject";
 export default {
-  name: "AddSubjectModal",
+  name: "AddSubjecttModal",
   data() {
     return {
       subject: {
-        name: "",
-        address: "",
-        computerQuantity: ""
+        subjectID: "",
+        name: ""
       }
     };
   },
@@ -23,20 +22,18 @@ export default {
 };
 
 function addNewSubject() {
-  if (this.subject.name && this.subject.address && this.subject.computerQuantity) {
+  if (this.subject.subjectID && this.subject.name) {
     createSubject(
       {
-        name: this.subject.name,
-        address: this.subject.address,
-        computerQuantity: Number(this.subject.computerQuantity)
+        subjectID: this.subject.subjectID,
+        name: this.subject.name
       },
       this.$cookies.get("accessToken")
     )
       .then(result => {
-        this.$emit("AddSubject", result.data);
+        this.$emit("addSubject", result.data);
+        this.subject.subjectID = "";
         this.subject.name = "";
-        this.subject.address = "";
-        this.subject.computerQuantity = 0;
         alertNotifyDefaul(_SUCCESS.createSuccess);
       })
       .catch(handleError);
@@ -44,9 +41,8 @@ function addNewSubject() {
 }
 
 function resetInput() {
+  this.subject.subjectID = "";
   this.subject.name = "";
-  this.subject.address = "";
-  this.subject.computerQuantity = 0;
 }
 </script>
 

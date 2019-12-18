@@ -5,7 +5,8 @@ export {
   getSubjectByID,
   createSubject,
   updateSubject,
-  deleteOneSubject
+  deleteOneSubject, 
+  importFile
 }
 
 let BASE_USER = `${process.env.BASE_URL}/subjects`
