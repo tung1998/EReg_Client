@@ -1,0 +1,36 @@
+<tr v-if="onEditing" role="row" class="odd">
+  <td class="index">
+    {{index}}
+  </td>
+  <td class="name">
+    <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
+  </td>
+  <td class="address">
+    <input type="text" class="form-control input-block" v-model="rowData.address" name="address" />
+  </td>
+  <td class="computerQuantity">
+    <input type="number" class="form-control input-block" v-model="rowData.computerQuantity" name="computerQuantity" />
+  </td>
+  <td class="actions text-center">
+    <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
+      <i class="fas fa-save"></i>
+    </a>
+    <a class="on-editing cancel-row" @click="rowCancelClick" title="Hủy chỉnh sửa">
+      <i class="fas fa-times"></i>
+    </a>
+  </td>
+</tr>
+<tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
+  <td class="index">{{index}}</td>
+  <td class="name">{{Shift.name}}</td>
+  <td class="address">{{Shift.address}}</td>
+  <td class="computerQuantity">{{Shift.computerQuantity}}</td>
+  <td class="actions text-center">
+    <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+    <a class="on-default remove-row" @click="rowRemoveClick" title="Xóa thông tin">
+      <i class="far fa-trash-alt"></i>
+    </a>
+  </td>
+</tr>
