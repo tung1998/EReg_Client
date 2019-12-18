@@ -1,9 +1,15 @@
 <div class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <div class="mb-3">
-        <a id="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" href="#addStudentModal" data-toggle="modal"
-          data-target="#addStudentModal">Thêm sinh viên <i class="fas fa-plus"></i></a>
+        <button ref="addToTable" class="mb-1 mt-1 mr-1 modal-sizes btn btn-primary" data-toggle="modal"
+          data-target="#addStudentModal">Thêm sinh viên <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="mb-3">
+        <button ref="importExcelBtn" class="mb-1 mt-1 mr-1 modal-sizes btn btn-success" @click="$refs.fileInput.click()">Import Excel <i class="fas fa-plus"></i></button>
+        <input type="file" v-on:change="uploadFile" ref="fileInput" class="d-none" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
       </div>
     </div>
     <div class="col-lg-6">

@@ -52,7 +52,6 @@ function addNewStudent() {
       this.$cookies.get("accessToken")
     )
       .then(result => {
-        console.log(result);
         this.$emit("addStudent", result.data);
         this.student.studentID = "";
         this.student.name = "";

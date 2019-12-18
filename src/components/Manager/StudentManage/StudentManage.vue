@@ -19,7 +19,8 @@ export default {
     };
   },
   methods: {
-    addStudent
+    addStudent,
+    reloadTable: created
   },
   created
 };
@@ -32,7 +33,6 @@ function addStudent(data) {
 function created() {
   getAllStudent(this.$cookies.get("accessToken"))
     .then(result => {
-      console.log(result)
       this.StudentList = result.data;
     })
     .catch(handleError);

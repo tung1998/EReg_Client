@@ -2,6 +2,9 @@
 
 <script>
 import TableRow from "./Row.vue";
+import { importFile } from "../../../../api/student";
+import { handleError, alertNotifyDefaul } from "../../../../helper/function";
+import { _SUCCESS } from "../../../../helper/variable";
 
 export default {
   name: "ModuleManagerTable",
@@ -13,17 +16,46 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "MSSV", "Họ tên", "Ngày sinh", "Giới tính", "Khoa", "Lớp khóa học", ""],
+      Fields: [
+        "STT",
+        "MSSV",
+        "Họ tên",
+        "Ngày sinh",
+        "Giới tính",
+        "Khoa",
+        "Lớp khóa học",
+        ""
+      ]
     };
   },
-  methods:{
-    deleteStudent
+  methods: {
+    deleteStudent,
+    uploadFile
   }
 };
 
 //methods
 function deleteStudent(index) {
   this.StudentList.splice(index, 1);
+}
+
+function uploadFile() {
+  this.$refs.addToTable.setAttribute("disabled", "disabled");
+  this.$refs.importExcelBtn.setAttribute("disabled", "disabled");
+  let formData = new FormData();
+  let inputFile = this.$refs.fileInput.files[0];
+  formData.append("inputFile", inputFile);
+  importFile(formData, this.$cookies.get("accessToken"))
+    .then(result => {
+      console.log(result);
+      alertNotifyDefaul(_SUCCESS.createSuccess);
+      this.$refs.fileInput.type = "text";
+      this.$refs.fileInput.type = "file";
+      this.$refs.addToTable.removeAttribute("disabled");
+      this.$refs.importExcelBtn.removeAttribute("disabled");
+      this.$emit("reloadTable");
+    })
+    .catch(handleError);
 }
 //support function
 </script>

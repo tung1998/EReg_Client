@@ -9,7 +9,7 @@
       <h2 class="card-title">QUẢN LÝ SINH VIÊN</h2>
     </header>
     <div class="card-body">
-      <TableStudent :StudentList="StudentList" />
+      <TableStudent :StudentList="StudentList" @reloadTable="reloadTable"/>
     </div>
   </section>
   <AddStudentModal @addStudent="addStudent" />

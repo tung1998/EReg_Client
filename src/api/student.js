@@ -5,13 +5,13 @@ export {
   getStudentByID,
   createStudent,
   updateStudent,
-  deleteOneStudent
+  deleteOneStudent,
+  importFile
 }
 
 let BASE_STUDENT = `${process.env.BASE_URL}/students`
 
 function getAllStudent(accessToken) {
-  console.log(accessToken)
   return axios.get(BASE_STUDENT, {
     headers: {
       accessToken
@@ -56,7 +56,7 @@ function createStudent({
   })
 }
 
-function updateStudent(id,{
+function updateStudent(id, {
   studentID,
   name,
   dateOfBirth,
@@ -89,6 +89,16 @@ function deleteOneStudent(id, accessToken) {
   let url = `${BASE_STUDENT}/${id}`
   return axios.delete(url, {
     headers: {
+      accessToken
+    },
+  })
+}
+
+function importFile(formData, accessToken) {
+  let url = `${BASE_STUDENT}/importFile`
+  return axios.post(url, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
       accessToken
     },
   })
