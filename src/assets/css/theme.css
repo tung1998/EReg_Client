@@ -1410,7 +1410,7 @@ html.mobile-device .sidebar-left {
 	html.boxed .sidebar-left .nano,
 	html.sidebar-left-big-icons .sidebar-left .nano {
 		position: static;
-		overflow: visible;
+		overflow: auto;
 		width: 100%;
 	}
 
