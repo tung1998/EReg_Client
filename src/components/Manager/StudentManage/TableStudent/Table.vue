@@ -31,7 +31,8 @@ export default {
     };
   },
   watch: {
-    searchInput: searchInputOnChange
+    searchInput: updateTableData,
+    StudentList: updateTableData
   },
   methods: {
     deleteStudent,
@@ -65,7 +66,7 @@ function uploadFile() {
 }
 
 // computed
-function searchInputOnChange() {
+function updateTableData() {
   let searchText = this.searchInput.toLowerCase()
   this.StudentSearch = this.StudentList.filter(item => {
     if (item.studentID.toLowerCase().includes(searchText)) return true;
@@ -77,6 +78,7 @@ function searchInputOnChange() {
     return false;
   });
 }
+
 //support function
 
 //cyclehook
