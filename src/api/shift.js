@@ -11,7 +11,7 @@ export {
 let BASE_USER = `${process.env.BASE_URL}/shifts`
 
 function getAllShift() {
-  return axios.get(BASE_USER,{
+  return axios.get(BASE_SHIFT,{
     headers: {
       accessToken
     },
@@ -19,7 +19,7 @@ function getAllShift() {
 }
 
 function getShiftByID(id,accessToken){
-  let url = `${BASE_USER}/${id}`
+  let url = `${BASE_SHIFT}/${id}`
   return axios.get(url,{
     headers: {
       accessToken
@@ -28,13 +28,19 @@ function getShiftByID(id,accessToken){
 }
 
 function createShift({
-  subject_id,
-  room_id,
+  subjectID,
+  roomID,
   time,
-  student_id,
+  studentID,
   term
 }, accessToken){
-    return axios.post(BASE_USER,{
+    return axios.post(BASE_SHIFT,{
+      subjectID,
+      roomID,
+      time,
+      studentID,
+      term
+    }, {
     headers: {
       accessToken
     },
@@ -42,14 +48,28 @@ function createShift({
 }
 
 function updateShift({
-  subject_id,
-  room_id,
+  subjectID,
+  roomID,
   time,
-  student_id,
+  studentID,
   term
 }, accessToken){
-  let url = `${BASE_USER}/${id}`
+  let url = `${BASE_SHIFT}/${id}`
+  console.log(url,{
+  subjectID,
+  roomID,
+  time,
+  studentID,
+  term  }, accessToken)
+  console.log(axios)
+    
     return axios.put(url,{
+      subjectID,
+      roomID,
+      time,
+      studentID,
+      term
+    }, {
     headers: {
       accessToken
     },
@@ -57,7 +77,7 @@ function updateShift({
 }
 
 function deleteOneShift(id,accessToken){
-  let url = `${BASE_USER}/${id}`
+  let url = `${BASE_SHIFT}/${id}`
   return axios.delete(url,{
     headers: {
       accessToken
