@@ -28,7 +28,7 @@ function addNewShift() {
   if (this.shift.subjectID && this.shift.roomID && this.shift.time && this.shift.studentID && this.shift.term) {
     createShift(
       {
-        studentID: this.shift.studentID,
+        subjectID: this.shift.subjectID,
         roomID: this.shift.roomID,
         time: this.shift.time,
         studentID: this.shift.studentID,
@@ -38,7 +38,7 @@ function addNewShift() {
     )
       .then(result => {
         this.$emit("addShift", result.data);
-        this.shift.studentID = "";
+        this.shift.subjectID = "";
         this.shift.roomID = "";
         this.shift.time = "";
         this.shift.studentID = "" ;
@@ -50,7 +50,7 @@ function addNewShift() {
 }
 
 function resetInput() {
-  this.shift.studentID = "";
+  this.shift.subjectID = "";
   this.shift.roomID = "";
   this.shift.time = "";
   this.shift.studentID = "" ;

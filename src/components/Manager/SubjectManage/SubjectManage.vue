@@ -7,7 +7,7 @@ import TableSubject from "./TableSubject/Table";
 import { getAllSubject } from '../../../api/subject';
 import { handleError } from '../../../helper/function';
 
-let accessToken
+let accessToken;
 
 export default {
   name: "SubjectManage",

@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Môn thi", "Phòng thi", "Thời gian", "Sinh viên", "Học kì", ""],
+      Fields: ["STT", "Môn thi", "Phòng thi", "Thời gian", "Sinh viên", "Học kì"],
     };
   },
   methods:{
