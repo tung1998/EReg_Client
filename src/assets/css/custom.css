@@ -29,3 +29,10 @@
 		margin-left: 55px;
 	}
 }
+
+.nano::-webkit-scrollbar {
+	display: none;
+}
+.nano {
+    -ms-overflow-style: none;
+} 
