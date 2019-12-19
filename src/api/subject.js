@@ -9,9 +9,9 @@ export {
   importFile
 }
 
-let BASE_USER = `${process.env.BASE_URL}/subjects`
+let BASE_SUBJECT = `${process.env.BASE_URL}/subjects`
 
-function getAllSubject() {
+function getAllSubject(accessToken) {
   return axios.get(BASE_SUBJECT,{
     headers: {
       accessToken
