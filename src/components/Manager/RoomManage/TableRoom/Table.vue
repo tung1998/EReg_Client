@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Phòng", "Địa chỉ", "Số máy tính", ""],
+      Fields: ["STT", "Phòng", "Địa chỉ", "Số máy tính", "Sửa/Xóa"],
     };
   },
   methods:{

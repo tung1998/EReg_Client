@@ -12,6 +12,7 @@ export default {
       shift: {
         subjectID: "",
         roomID: "",
+        exam: "",
         time: "",
         studentID: "",
         term: ""
@@ -28,6 +29,7 @@ function addNewShift() {
   console.log({
         subjectID: this.shift.subjectID,
         roomID: this.shift.roomID,
+        exam: this.shift.exam,
         time: this.shift.time,
         term: this.shift.term
       })
@@ -36,6 +38,7 @@ function addNewShift() {
       {
         subjectID: this.shift.subjectID,
         roomID: this.shift.roomID,
+        exam: this.shift.exam,
         time: this.shift.time,
         term: this.shift.term
       },
@@ -45,6 +48,7 @@ function addNewShift() {
         this.$emit("addShift", result.data);
         this.shift.subjectID = "";
         this.shift.roomID = "";
+        this.shift.exam = "";
         this.shift.time = "";
         this.shift.term = "" ;
         alertNotifyDefaul(_SUCCESS.createSuccess);
@@ -56,6 +60,7 @@ function addNewShift() {
 function resetInput() {
   this.shift.subjectID = "";
   this.shift.roomID = "";
+  this.shift.exam = "";
   this.shift.time = "";
   this.shift.term = "" ;
 }

@@ -30,6 +30,7 @@ function getShiftByID(id,accessToken){
 function createShift({
   subjectID,
   roomID,
+  exam,
   time,
   studentID,
   term
@@ -37,6 +38,7 @@ function createShift({
     return axios.post(BASE_SHIFT,{
       subjectID,
       roomID,
+      exam,
       time,
       studentID,
       term
@@ -50,22 +52,26 @@ function createShift({
 function updateShift({
   subjectID,
   roomID,
+  exam,
   time,
   studentID,
   term
 }, accessToken){
   let url = `${BASE_SHIFT}/${id}`
   console.log(url,{
-  subjectID,
-  roomID,
-  time,
-  studentID,
-  term  }, accessToken)
+    subjectID,
+    roomID,
+    exam,
+    time,
+    studentID,
+    term
+}, accessToken)
   console.log(axios)
     
     return axios.put(url,{
       subjectID,
       roomID,
+      exam,
       time,
       studentID,
       term
