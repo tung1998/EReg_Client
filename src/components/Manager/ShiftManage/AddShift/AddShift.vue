@@ -6,14 +6,14 @@ import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
 import { createShift } from "../../../../api/shift";
 export default {
-  name: "AddShiftModal",
+  name: "AddShifttModal",
   data() {
     return {
       shift: {
-        subject_id: "",
-        shift_id: "",
+        subjectID: "",
+        roomID: "",
         time: "",
-        student_id: "",
+        studentID: "",
         term: ""
       }
     };
@@ -25,24 +25,24 @@ export default {
 };
 
 function addNewShift() {
-  if (this.shift.subject_id && this.shift.shift_id && this.shift. time && this.shift.student_id && this.shift.term) {
+  if (this.shift.subjectID && this.shift.roomID && this.shift.time && this.shift.studentID && this.shift.term) {
     createShift(
       {
-        subject_id: this.shift.subject_id,
-        shift_id: this.shift.shift_id,
+        studentID: this.shift.studentID,
+        roomID: this.shift.roomID,
         time: this.shift.time,
-        address: this.shift.student_id,
+        studentID: this.shift.studentID,
         term: this.shift.term
       },
       this.$cookies.get("accessToken")
     )
       .then(result => {
         this.$emit("addShift", result.data);
-        this.shift.subject_id = "";
-        this.shift.shift_id = "";
+        this.shift.studentID = "";
+        this.shift.roomID = "";
         this.shift.time = "";
-        this.shift.student_id = "";
-        this.shift.term = "";
+        this.shift.studentID = "" ;
+        this.shift.term = "" ;
         alertNotifyDefaul(_SUCCESS.createSuccess);
       })
       .catch(handleError);
@@ -50,11 +50,11 @@ function addNewShift() {
 }
 
 function resetInput() {
-  this.shift.subject_id = "";
-  this.shift.shift_id = "";
+  this.shift.studentID = "";
+  this.shift.roomID = "";
   this.shift.time = "";
-  this.shift.student_id = "";
-  this.shift.term = "";
+  this.shift.studentID = "" ;
+  this.shift.term = "" ;
 }
 </script>
 
