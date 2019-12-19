@@ -30,7 +30,6 @@ function getShiftByID(id,accessToken){
 function createShift({
   subjectID,
   roomID,
-  exam,
   time,
   shiftExam,
   studentID,
