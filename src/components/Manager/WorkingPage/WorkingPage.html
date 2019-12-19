@@ -28,10 +28,6 @@
               <router-link role="menuitem" tabindex="-1" :to="{name: 'managerProfile'}"><i class="fas fa-user"></i> My Profile</router-link>
             </li>
             <li>
-              <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fas fa-lock"></i> Lock
-                Screen</a>
-            </li>
-            <li>
               <a role="menuitem" tabindex="-1" href="#" @click="logout"><i class="fas fa-power-off"></i> Logout</a>
             </li>
           </ul>
@@ -45,12 +41,8 @@
   <div class="inner-wrapper">
     <!-- start: sidebar -->
     <aside id="sidebar-left" class="sidebar-left">
-
       <div class="sidebar-header">
-        <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html"
-          data-fire-event="sidebar-left-toggle">
-          <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
-        </div>
+       
       </div>
 
       <div class="nano has-scrollbar">
@@ -73,7 +65,7 @@
               <li class="nav-parent">
                 <router-link class="nav-link" :to="{name: 'subjectManage'}">
                   <i class="fas fa-book" aria-hidden="true"></i>
-                  <span>Quản lý môn thi</span>
+                  <span>Quản lý môn học</span>
                 </router-link>
               </li>
               <li class="nav-parent">
@@ -105,14 +97,6 @@
                     </router-link>
                   </li>
                 </ul>
-              </li>
-
-              <li>
-                <a class="nav-link" href="mailbox-folder.html">
-                  <span class="float-right badge badge-primary">182</span>
-                  <i class="fas fa-envelope" aria-hidden="true"></i>
-                  <span>Mailbox</span>
-                </a>
               </li>
             </ul>
           </nav>

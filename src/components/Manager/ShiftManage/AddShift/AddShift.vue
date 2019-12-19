@@ -13,6 +13,7 @@ export default {
         subjectID: "",
         shiftExam:"",
         roomID: "",
+        exam: "",
         time: "",
         studentID: "",
         term: ""
@@ -30,6 +31,7 @@ function addNewShift() {
         subjectID: this.shift.subjectID,
         shiftExam: this.shift.shiftExam,
         roomID: this.shift.roomID,
+        exam: this.shift.exam,
         time: this.shift.time,
         term: this.shift.term
       })
@@ -39,6 +41,7 @@ function addNewShift() {
         subjectID: this.shift.subjectID,        
         shiftExam: this.shift.shiftExam,
         roomID: this.shift.roomID,
+        exam: this.shift.exam,
         time: this.shift.time,
         term: this.shift.term
         
@@ -50,6 +53,7 @@ function addNewShift() {
         this.shift.subjectID = "";
         this.shift.shiftExam = "" ;
         this.shift.roomID = "";
+        this.shift.exam = "";
         this.shift.time = "";
         this.shift.term = "" ;
         alertNotifyDefaul(_SUCCESS.createSuccess);
@@ -62,6 +66,7 @@ function resetInput() {
   this.shift.subjectID = "";
   this.shift.shiftExam = "" ;
   this.shift.roomID = "";
+  this.shift.exam = "";
   this.shift.time = "";
   this.shift.term = "" ;
 }

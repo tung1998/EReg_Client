@@ -24,7 +24,7 @@ export default {
         "Giới tính",
         "Khoa",
         "Lớp khóa học",
-        ""
+        "Sửa/Xóa"
       ],
       searchInput: "",
       StudentSearch: []

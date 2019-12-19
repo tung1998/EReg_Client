@@ -30,6 +30,7 @@ function getShiftByID(id,accessToken){
 function createShift({
   subjectID,
   roomID,
+  exam,
   time,
   shiftExam,
   studentID,
@@ -65,6 +66,7 @@ function updateShift({
   time,
   studentID,
   term  }, accessToken)
+
   console.log(axios)
     
     return axios.put(url,{

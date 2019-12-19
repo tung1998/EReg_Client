@@ -13,7 +13,8 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Môn thi", "Ca thi", "Ngày thi","Phòng thi", "Học kì", "Chọn"],
+      Fields: ["STT", "Môn thi", "Ca thi", "Phòng thi", "Thời gian", "Học kì", "Sửa/Xóa"],
+
     };
   },
   methods:{
