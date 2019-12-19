@@ -8,31 +8,57 @@
             <h2 class="card-title">IN DANH SÁCH THI</h2>
         </header>
         <div class="card-body">
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label text-sm-right pt-2">Chọn môn thi</label>
-                    <div class="col-sm-6">
+            <div class="form-group row">
+                <label class="col-sm-3 control-label text-sm-right pt-2">Học kì</label>
+                <div class="col-sm-6">
+                    <select id="" class="form-control" title="Please select at least one company" required="">
+                        <option >Chọn học kì</option>
+                        <option>2019-2020-HKI</option>
+                        <option>2019-2020-HK phụ I</option>
+                        <option>2019-2020-HKII</option>
+                        <option>2019-2020-HK phụ II</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 control-label text-sm-right pt-2">Môn thi</label>
+                <div class="col-sm-6">
+                    <select id="" class="form-control" title="Please select at least one company" required="">
+                        <option value="">Chọn môn thi</option>
+                        <option value="apple">Quản lý dự án</option>
+                        <option value="google">LT hướng đối tượng</option>
+                        <option value="microsoft">Cơ sở dữ liệu</option>
+                        <option value="yahoo">Mạng máy tính</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                    <label class="col-sm-3 control-label text-sm-right pt-2">Ca thi</label>
+                    <div class="col-sm-4">
                         <select id="" class="form-control" title="Please select at least one company" required="">
-                            <option value="">Choose a subject</option>
-                            <option value="apple">Quản lý dự án</option>
-                            <option value="google">LT hướng đối tượng</option>
-                            <option value="microsoft">Cơ sở dữ liệu</option>
-                            <option value="yahoo">Mạng máy tính</option>
+                            <option>Choose a Shift</option>
+                            <option>1 (từ 7h-9h)</option>
+                            <option>2 (từ 9h30-11h30)</option>
+                            <option>3 (từ 13h-15h)</option>
+                            <option>4 (từ 15h30-17h30)</option>
                         </select>
                     </div>
-                </div>
+            </div>
 
-                <div class="form-group row">
-                        <label class="col-sm-3 control-label text-sm-right pt-2">Chọn ca thi</label>
-                        <div class="col-sm-4">
-                            <select id="" class="form-control" title="Please select at least one company" required="">
-                                <option value="">Choose a Shift</option>
-                                <option value="apple">1</option>
-                                <option value="google">2</option>
-                                <option value="microsoft">3</option>
-                                <option value="yahoo">4</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="form-group row">
+                <label class="col-sm-3 control-label text-sm-right pt-2">Phòng thi</label>
+                <div class="col-sm-4">
+                    <select id="" class="form-control" title="Please select at least one company" required="">
+                        <option>Chọn phòng thi</option>
+                        <option>201-G2</option>
+                        <option>202-G2</option>
+                        <option>305-G2</option>
+                        <option>313-G2</option>
+                    </select>
+                </div>
+        </div>
 
             <div id="datatable-tabletools_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="dt-buttons mb-2 pb-1 text-right"><div class="dt-buttons btn-group">   <a class="btn buttons-print btn-default" tabindex="0" aria-controls="datatable-tabletools" href="#"><span>Print</span></a> <a class="btn buttons-excel buttons-html5 btn-default" tabindex="0" aria-controls="datatable-tabletools" href="#"><span>Excel</span></a> <a class="btn buttons-pdf buttons-html5 btn-default" tabindex="0" aria-controls="datatable-tabletools" href="#"><span>PDF</span></a> </div></div><div class="text-right mb-md"></div><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-tabletools_length"><label><select name="datatable-tabletools_length" aria-controls="datatable-tabletools" class="form-control form-control-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-datatable-tabletools_length-2g-container"><span class="select2-selection__rendered" id="select2-datatable-tabletools_length-2g-container" title="10">10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> records per page</label></div></div><div class="col-lg-6"><div id="datatable-tabletools_filter" class="dataTables_filter"><label><input type="search" class="form-control pull-right" placeholder="Search..." aria-controls="datatable-tabletools"></label></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
                 <thead>
