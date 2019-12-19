@@ -11,7 +11,7 @@ export default {
     return {
       subject: {
         subjectID: "",
-        name: ""
+        name: "",
       }
     };
   },
