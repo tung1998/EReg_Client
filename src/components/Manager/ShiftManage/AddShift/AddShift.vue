@@ -6,11 +6,12 @@ import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
 import { createShift } from "../../../../api/shift";
 export default {
-  name: "AddShifttModal",
+  name: "AddShiftModal",
   data() {
     return {
       shift: {
         subjectID: "",
+        shiftExam:"",
         roomID: "",
         time: "",
         studentID: "",
@@ -27,23 +28,27 @@ export default {
 function addNewShift() {
   console.log({
         subjectID: this.shift.subjectID,
+        shiftExam: this.shift.shiftExam,
         roomID: this.shift.roomID,
         time: this.shift.time,
         term: this.shift.term
       })
-  if (this.shift.subjectID && this.shift.roomID && this.shift.time  && this.shift.term) {
+  if (this.shift.subjectID && this.shift.shiftExam && this.shift.roomID  && this.shift.time  && this.shift.term ) {
     createShift(
       {
-        subjectID: this.shift.subjectID,
+        subjectID: this.shift.subjectID,        
+        shiftExam: this.shift.shiftExam,
         roomID: this.shift.roomID,
         time: this.shift.time,
         term: this.shift.term
+        
       },
       this.$cookies.get("accessToken")
     )
       .then(result => {
         this.$emit("addShift", result.data);
         this.shift.subjectID = "";
+        this.shift.shiftExam = "" ;
         this.shift.roomID = "";
         this.shift.time = "";
         this.shift.term = "" ;
@@ -55,6 +60,7 @@ function addNewShift() {
 
 function resetInput() {
   this.shift.subjectID = "";
+  this.shift.shiftExam = "" ;
   this.shift.roomID = "";
   this.shift.time = "";
   this.shift.term = "" ;

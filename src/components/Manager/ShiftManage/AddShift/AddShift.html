@@ -18,7 +18,7 @@
                   <i class="fas fa-list-alt"></i>
                 </span>
               </span>
-            <select id="company" class="form-control" title="Please select at least one company" required="" v-model="shift.subjectID">
+            <select id="company" class="form-control" required="" v-model="shift.subjectID">
               <option value="">Choose a subject</option>
               <option value="Quản lý dự án">Quản lý dự án</option>
               <option value="LT hướng đối tượng">LT hướng đối tượng</option>
@@ -28,9 +28,8 @@
             </div>
           </div>
         </div>
-
         <div class="form-group row">
-          <label class="col-lg-3 control-label text-lg-right pt-2">Ca thi số </label>
+          <label class="col-lg-3 control-label text-lg-right pt-2">Ca thi </label>
           <div class="col-lg-6">
             <div class="input-group">
               <span class="input-group-prepend">
@@ -38,13 +37,13 @@
                   <i class="fas fa-check"></i>
                 </span>
               </span>
-            <select class="form-control mb-6">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+              <select class="form-control mb-6"  v-model="shift.shiftExam">
+                <option value="">Choose a subject</option>
+                <option value="1:(7h-9h)">1:7h-9h</option>
+                <option value="2:(9h-11h)">2:9h-11h</option>
+                <option value="3:(13h-15h">3:13h-15h</option>
+                <option value="4:(15h-17h)">4:15h-17h</option>
+              </select>
           </div>
           </div>
         </div>
@@ -57,7 +56,7 @@
                   <i class="fas fa-calendar"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="shift.time">
+              <input type="date" class="form-control" v-model="shift.time">
             </div>
           </div>
         </div>
@@ -81,7 +80,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-lg-3 control-label text-lg-right pt-2">Học kỳ</label>
+          <label class="col-lg-3 control-label text-lg-right pt-2">Học kỳ </label>
           <div class="col-lg-6">
             <div class="input-group">
               <span class="input-group-prepend">
@@ -89,8 +88,14 @@
                   <i class="fas fa-check"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="shift.term">
-            </div>
+            <select class="form-control mb-6"  v-model="shift.term">
+              <option value="">Choose a subject</option>
+              <option value="18_19_HKI">18_19_HKI</option>
+              <option value="18_19_HKII">18_19_HKII</option>
+              <option value="19_20_HKI">19_20_HKI</option>
+              <option value="19_20_HKII">19_20_HKII</option>
+            </select>
+          </div>
           </div>
         </div>
       </div>
