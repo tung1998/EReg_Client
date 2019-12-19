@@ -8,7 +8,7 @@ export {
   deleteOneTerm
 }
 
-let BASE_Term = `${process.env.BASE_URL}/terms`
+let BASE_TERM = `${process.env.BASE_URL}/terms`
 
 function getAllTerm(accessToken) {
   return axios.get(BASE_TERM, {

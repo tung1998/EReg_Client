@@ -26,7 +26,7 @@ export default {
 };
 
 function addNewTerm() {
-  if (this.term.name && this.term.address && this.term.computerQuantity) {
+  if (this.term.name && this.term.startTime && this.term.endTime && this.term.subject && this.term.registSTime && this.term.registETime) {
     createTerm(
       {
         name: this.term.name,
