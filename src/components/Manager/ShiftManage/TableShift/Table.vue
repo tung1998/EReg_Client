@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       Fields: ["STT", "Môn thi", "Ca thi", "Phòng thi", "Thời gian", "Học kì", "Sửa/Xóa"],
+
     };
   },
   methods:{

@@ -5,18 +5,27 @@
   <td class="subjectID">
     <input type="text" class="form-control input-block" v-model="rowData.subjectID" name="subjectID" />
   </td>
+<<<<<<< HEAD
+  <td class="shiftExam">
+    <input type="text" class="form-control input-block" v-model="rowData.shiftExam" name="shiftExam" />
+=======
   <td class="exam">
     <input type="text" class="form-control input-block" v-model="rowData.exam" name="exam" />
   </td>
   <td class="roomID">
     <input type="text" class="form-control input-block" v-model="rowData.roomID" name="roomID" />
+>>>>>>> c4bfdc28cb17aee8733342d4c1021ba2ca29040b
   </td>
   <td class="time">
     <input type="text" class="form-control input-block" v-model="rowData.time" name="time" />
   </td>
+  <td class="roomID">
+    <input type="text" class="form-control input-block" v-model="rowData.roomID" name="roomID" />
+  </td>
   <td class="term">
     <input type="text" class="form-control input-block" v-model="rowData.term" name="term" />
   </td>
+  
   <td class="actions text-center">
     <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
       <i class="fas fa-save"></i>
@@ -29,9 +38,9 @@
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
   <td class="subjectID">{{Shift.subjectID}}</td>
-  <td class="exam">{{Shift.exam}}</td>
-  <td class="roomID">{{Shift.roomID}}</td>
+  <td class="term">{{Shift.shiftExam}}</td>
   <td class="time">{{Shift.time}}</td>
+  <td class="roomID">{{Shift.roomID}}</td>
   <td class="term">{{Shift.term}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
