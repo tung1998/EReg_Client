@@ -8,9 +8,9 @@ export {
   deleteOneShift
 }
 
-let BASE_USER = `${process.env.BASE_URL}/shifts`
+let BASE_SHIFT = `${process.env.BASE_URL}/shifts`
 
-function getAllShift() {
+function getAllShift(accessToken) {
   return axios.get(BASE_SHIFT,{
     headers: {
       accessToken

@@ -25,13 +25,18 @@ export default {
 };
 
 function addNewShift() {
-  if (this.shift.subjectID && this.shift.roomID && this.shift.time && this.shift.studentID && this.shift.term) {
+  console.log({
+        subjectID: this.shift.subjectID,
+        roomID: this.shift.roomID,
+        time: this.shift.time,
+        term: this.shift.term
+      })
+  if (this.shift.subjectID && this.shift.roomID && this.shift.time  && this.shift.term) {
     createShift(
       {
         subjectID: this.shift.subjectID,
         roomID: this.shift.roomID,
         time: this.shift.time,
-        studentID: this.shift.studentID,
         term: this.shift.term
       },
       this.$cookies.get("accessToken")
@@ -41,7 +46,6 @@ function addNewShift() {
         this.shift.subjectID = "";
         this.shift.roomID = "";
         this.shift.time = "";
-        this.shift.studentID = "" ;
         this.shift.term = "" ;
         alertNotifyDefaul(_SUCCESS.createSuccess);
       })
@@ -53,7 +57,6 @@ function resetInput() {
   this.shift.subjectID = "";
   this.shift.roomID = "";
   this.shift.time = "";
-  this.shift.studentID = "" ;
   this.shift.term = "" ;
 }
 </script>

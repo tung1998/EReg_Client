@@ -18,8 +18,8 @@ import ManagerPage from '@/components/manager/page/page.vue'
 
 //import student component
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
-import StudentProfile from '@/components/Student/profile/profile.vue'
-import StudentPrint from '@/components/Student/print/print.vue'
+import StudentProfile from '@/components/Student/studentProfile/studentProfile.vue'
+import StudentPrint from '@/components/Student/studentPrint/studentPrint.vue'
 import registerExam from '@/components/Student/registerExam/registerExam.vue'
 import StudentPage from '@/components/Student/page/page.vue'
 
@@ -115,7 +115,7 @@ const router = new Router({
         beforeEnter: beforeEnterStudent
       }, {
         name: 'studentProfile',
-        path: 'profile',
+        path: 'studentProfile',
         component: StudentProfile,
         beforeEnter: beforeEnterStudent
       }, {
@@ -124,8 +124,8 @@ const router = new Router({
         component: registerExam,
         beforeEnter: beforeEnterStudent
       }, {
-        name: 'print',
-        path: 'print',
+        name: 'studentPrint',
+        path: 'studentPrint',
         component: StudentPrint,
         beforeEnter: beforeEnterStudent
       }],
