@@ -11,9 +11,6 @@
   <td class="time">
     <input type="text" class="form-control input-block" v-model="rowData.time" name="time" />
   </td>
-  <td class="studentID">
-    <input type="text" class="form-control input-block" v-model="rowData.studentID" name="studentID" />
-  </td>
   <td class="term">
     <input type="text" class="form-control input-block" v-model="rowData.term" name="term" />
   </td>
@@ -31,7 +28,6 @@
   <td class="subjectID">{{Shift.subjectID}}</td>
   <td class="roomID">{{Shift.roomID}}</td>
   <td class="time">{{Shift.time}}</td>
-  <td class="studentID">{{Shift.studentID}}</td>
   <td class="term">{{Shift.term}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
