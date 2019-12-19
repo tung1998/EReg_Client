@@ -22,16 +22,22 @@ export default {
         "Họ tên",
         "Ngày sinh",
         "Giới tính",
-        "Lớp Khóa học",
         "Khoa",
+        "Lớp Khóa học",
         ""
-      ]
+      ],
+      searchInput: "",
+      StudentSearch: []
     };
+  },
+  watch: {
+    searchInput: searchInputOnChange
   },
   methods: {
     deleteStudent,
     uploadFile
-  }
+  },
+  mounted
 };
 
 //methods
@@ -57,7 +63,26 @@ function uploadFile() {
     })
     .catch(handleError);
 }
+
+// computed
+function searchInputOnChange() {
+  let searchText = this.searchInput.toLowerCase()
+  this.StudentSearch = this.StudentList.filter(item => {
+    if (item.studentID.toLowerCase().includes(searchText)) return true;
+    if (item.name.toLowerCase().includes(searchText)) return true;
+    if (item.dateOfBirth.toLowerCase().includes(searchText)) return true;
+    if (item.sex.toLowerCase().includes(searchText)) return true;
+    if (item.major.toLowerCase().includes(searchText)) return true;
+    if (item.classMajor.toLowerCase().includes(searchText)) return true;
+    return false;
+  });
+}
 //support function
+
+//cyclehook
+function mounted() {
+  this.StudentSearch = this.StudentList;
+}
 </script>
 
 <style>

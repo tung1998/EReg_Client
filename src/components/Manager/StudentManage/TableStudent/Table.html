@@ -14,7 +14,7 @@
     </div>
     <div class="col-lg-6">
       <div id="datatable-editable_filter" class="dataTables_filter"><label><input type="search"
-            class="form-control pull-right" placeholder="Search..." aria-controls="datatable-editable"></label>
+            class="form-control pull-right" placeholder="Search..." aria-controls="datatable-editable" v-model="searchInput"></label>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <TableRow v-for="(Student,index) in StudentList" :key="index" :Student="Student" :index="index"
+        <TableRow v-for="(Student,index) in StudentSearch" :key="index" :Student="Student" :index="index"
           @deleteStudent="deleteStudent(index)" />
       </tbody>
     </table>
