@@ -5,251 +5,135 @@
                 <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
             </div>
     
-            <h2 class="card-title">Môn đăng ký</h2>
+            <h2 class="card-title" style="margin: 0; padding: 0; font-weight: bold;" >Môn đăng ký</h2>
         </header>
         <div class="card-body"> 
-            <div class="row">
-                
-            </div>
-            <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"><label><select name="datatable-editable_length" aria-controls="datatable-editable" class="form-control form-control-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-datatable-editable_length-ul-container"><span class="select2-selection__rendered" id="select2-datatable-editable_length-ul-container" title="10">10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> records per page</label></div></div>
-            <div class="col-lg-6"><div data-v-23b8ee9d="" class="input-group"></div><span>Ca 1: 7h-9h </span></br><span>Ca 2: 14h-16h</span></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
+            <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"></div></div>
+            <div class="col-lg-6"><div data-v-23b8ee9d="" class="input-group"></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
                 <thead>
                     <tr role="row">
-                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 174.333px;">
+                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">
                             STT
-                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
+                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 171.3333px;">
                             Tên môn học
-                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
+                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 171.3333px;">
                             Mã môn học
-                        </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                            Tổng SV
-                        </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                            Đã ĐK
-                        </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                            Ca thi
-                        </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
-                            Lịch thi
-                        </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 41.3333px;">
+                        </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 171.333px;">
+                            Ca thi/Ngày thi
+                        </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 21.3333px;">
                             Chọn
                         </th></tr>
                 </thead>
                 <tbody>
-                   <tr data-item-id="7" role="row" class="odd">
+                   <tr role="row" class="odd">
                         <td class="sorting_1">1</td>
                         <td>Xác suất thống kê</td>
                         <td>xstk-2019</td>
-                        <td>70</td>
-                        <td>57</td>
-                        <td>1</td>
-                        <td>17/10/2019</td>
+                        <td><select class="form-control mb-30">
+                            <option value="">Choose a time</option>
+                            <option value="1:(7h-9h)">Ca 1: 7h-9h Ngày 20/12/2019</option>
+                            <option value="2:(9h-11h)">Ca 2: 9h-11h Ngày 22/12/2019</option>
+                            <option value="3:(13h-15h">Ca 3: 13h-15h Ngày 23/12/2019</option>
+                            <option value="4:(15h-17h)">Ca 4: 15h-17h Ngày 24/12/2019</option>
+                          </select></td>
                         <td>
                         <input type="checkbox"></td>                        
                     </tr>
-                    <tr data-item-id="8" role="row" class="odd">
-                            <td class="sorting_1">2</td>
-                            <td>Tín hiệu hệ thống</td>
-                            <td>thht-2019</td>
-                            <td>80</td>
-                            <td>65</td>
-                            <td>2</td>
-                            <td>23/10/2019</td>
-                            <td>
-                            <input type="checkbox"></td>                           
+                    <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Xác suất thống kê</td>
+                        <td>xstk-2019</td>
+                        <td><select class="form-control mb-30">
+                            <option value="">Choose a time</option>
+                            <option value="1:(7h-9h)">Ca 1: 7h-9h Ngày 20/12/2019</option>
+                            <option value="2:(9h-11h)">Ca 2: 9h-11h Ngày 22/12/2019</option>
+                            <option value="3:(13h-15h">Ca 3: 13h-15h Ngày 23/12/2019</option>
+                            <option value="4:(15h-17h)">Ca 4: 15h-17h Ngày 24/12/2019</option>
+                          </select></td>
+                        <td>
+                        <input type="checkbox"></td>                        
                     </tr>
-                    <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">3</td>
-                            <td>Mạng máy tính</td>
-                            <td>mmt-2019</td>
-                            <td>79</td>
-                            <td>43</td>
-                            <td>1</td>
-                            <td>28/10/2019</td>
-                            <td>
-                            <input type="checkbox"></td>                           
+                    <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Xác suất thống kê</td>
+                        <td>xstk-2019</td>
+                        <td><select class="form-control mb-30">
+                            <option value="">Choose a time</option>
+                            <option value="1:(7h-9h)">Ca 1: 7h-9h Ngày 20/12/2019</option>
+                            <option value="2:(9h-11h)">Ca 2: 9h-11h Ngày 22/12/2019</option>
+                            <option value="3:(13h-15h">Ca 3: 13h-15h Ngày 23/12/2019</option>
+                            <option value="4:(15h-17h)">Ca 4: 15h-17h Ngày 24/12/2019</option>
+                          </select></td>
+                        <td>
+                        <input type="checkbox"></td>                        
                     </tr>
-                    <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">4</td>
-                            <td>Mạng máy tính</td>
-                            <td>mmt-2019</td>
-                            <td>79</td>
-                            <td>43</td>
-                            <td>1</td>
-                            <td>28/10/2019</td>
-                            <td>
-                            <input type="checkbox"></td>                           
-                    </tr>
-                    <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">5</td>
-                            <td>Mạng máy tính</td>
-                            <td>mmt-2019</td>
-                            <td>79</td>
-                            <td>43</td>
-                            <td>1</td>
-                            <td>28/10/2019</td>
-                            <td>
-                            <input type="checkbox"></td>                           
-                    </tr></tbody>
-                      <!--  <td class="actions">
+                    </tbody>
+            </table></div>
+        </div>
+        </div>
+    </br></br></br>
+    <!------------------>
+        <header class="card-header">            
+            <div class="card-actions">
+                <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+            </div>
+            <h2 class="card-title" style="margin: 0; padding: 0; font-weight: bold;"> Môn thi đã đăng ký</h2>
+        </header>
+   
+        <div class="card-body">
+            <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"></div></div>
+            <div class="col-lg-6"><div data-v-23b8ee9d="" class="input-group"></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">
+                            STT
+                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 155px;">
+                            Tên môn học
+                        </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 155px;">
+                            Mã môn học
+                        </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 171.333px;">
+                            Ca thi/Ngày thi
+                        </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 21.3333px;">
+                            Xóa
+                        </th></tr>
+                </thead>
+                <tbody>
+                   <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Xác suất thống kê</td>
+                        <td>xstk-2019</td>
+                        <td>Ca 4: 15h-17h Ngày 24/12/2019</td>
+                        <td class="actions">
                             <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
                             <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                            <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
                             <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                        </td>
-                    -->
+                        </td>                         
+                    </tr>
+                    <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Xác suất thống kê</td>
+                        <td>xstk-2019</td>
+                        <td>Ca 4: 15h-17h Ngày 24/12/2019</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>                         
+                    </tr>
+                    <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Xác suất thống kê</td>
+                        <td>xstk-2019</td>
+                        <td>Ca 4: 15h-17h Ngày 24/12/2019</td>
+                        <td class="actions">
+                            <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                            <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                            <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                        </td>                         
+                    </tr>                   
+                </tbody>
             </table></div>
-            
-            
-            <div class="dataTables_paginate paging_simple_numbers" id="datatable-editable_paginate">
-                <ul class="pagination">
-                    <li class="paginate_button page-item previous disabled" id="datatable-editable_previous">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="0" tabindex="0" class="page-link">
-                            Previous
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item active">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="1" tabindex="0" class="page-link">
-                            1
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="2" tabindex="0" class="page-link">
-                            2
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="3" tabindex="0" class="page-link">
-                            3
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="4" tabindex="0" class="page-link">
-                            4
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="5" tabindex="0" class="page-link">
-                            5
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="6" tabindex="0" class="page-link">
-                            6
-                        </a>
-                    </li>
-                    <li class="paginate_button page-item next" id="datatable-editable_next">
-                        <a href="#" aria-controls="datatable-editable" data-dt-idx="7" tabindex="0" class="page-link">
-                            Next
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
         </div>
-       
-        <header class="card-header">
-                
-                <div class="card-actions">
-                    <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-                </div>
-                <h2 class="card-title"> Môn thi đã đăng ký</h2>
-            </header>
-            <div class="card-body">
-                <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"><label><select name="datatable-editable_length" aria-controls="datatable-editable" class="form-control form-control-sm select2-hidden-accessible" tabindex="-1" aria-hidden="true"></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 75px;"><span class="selection"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></label></div></div>
-                <div class="col-lg-6"><div id="datatable-editable_filter" class="dataTables_filter"></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
-                    <thead>
-                        <tr role="row">
-                            <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 174.333px;">
-                                STT
-                            </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
-                                Tên môn học
-                            </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
-                                Mã môn học
-                            </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                                Tổng SV
-                            </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                                Đã ĐK
-                            </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 74.333px;">
-                                Ca thi
-                            </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 241.3333px;">
-                                Lịch thi
-                            </th><th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 41.3333px;">
-                                Hủy
-                            </th></tr>
-                    </thead>
-                    <tbody>
-                       <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">1</td>
-                            <td>Xác suất thống kê</td>
-                            <td>xstk-2019</td>
-                            <td>70</td>
-                            <td>57</td>
-                            <td>1</td>
-                            <td>17/10/2019</td>
-                            <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                            </td>                      
-                        </tr>
-                        <tr data-item-id="8" role="row" class="odd">
-                            <td class="sorting_1">2</td>
-                            <td>Tín hiệu hệ thống</td>
-                            <td>thht-2019</td>
-                            <td>80</td>
-                            <td>65</td>
-                            <td>2</td>
-                            <td>23/10/2019</td>
-                            <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                            </td>                          
-                        </tr>
-                        <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">3</td>
-                            <td>Mạng máy tính</td>
-                            <td>mmt-2019</td>
-                            <td>79</td>
-                            <td>43</td>
-                            <td>1</td>
-                            <td>28/10/2019</td>
-                            <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                            </td>                           
-                        </tr>
-                        <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">4</td>
-                            <td>Mạng máy tính</td>
-                            <td>mmt-2019</td>
-                            <td>79</td>
-                            <td>43</td>
-                            <td>1</td>
-                            <td>28/10/2019</td>
-                            <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                            </td>                          
-                        </tr>
-                        <tr data-item-id="7" role="row" class="odd">
-                            <td class="sorting_1">5</td>
-                            <td>Kiến trúc máy tính</td>
-                            <td>ktmt-2019</td>
-                            <td>70</td>
-                            <td>45</td>
-                            <td>1</td>
-                            <td>30/10/2019</td>
-                            <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                            </td>                          
-                        </tr>                          
-                    </tbody>
-                </table></div>
-            </div>
-            </div>
-    </section>
+</section>
