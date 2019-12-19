@@ -2,14 +2,20 @@
   <td class="index">
     {{index}}
   </td>
-  <td class="name">
-    <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
+  <td class="subject_id">
+    <input type="text" class="form-control input-block" v-model="rowData.subject_id" name="subject_id" />
   </td>
-  <td class="address">
-    <input type="text" class="form-control input-block" v-model="rowData.address" name="address" />
+  <td class="room_id">
+    <input type="text" class="form-control input-block" v-model="rowData.room_id" name="room_id" />
   </td>
-  <td class="computerQuantity">
-    <input type="number" class="form-control input-block" v-model="rowData.computerQuantity" name="computerQuantity" />
+  <td class="time">
+    <input type="text" class="form-control input-block" v-model="rowData.time" name="time" />
+  </td>
+  <td class="student_id">
+    <input type="text" class="form-control input-block" v-model="rowData.student_id" name="student_id" />
+  </td>
+  <td class="term">
+    <input type="text" class="form-control input-block" v-model="rowData.term" name="term" />
   </td>
   <td class="actions text-center">
     <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
@@ -22,9 +28,11 @@
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
-  <td class="name">{{Shift.name}}</td>
-  <td class="address">{{Shift.address}}</td>
-  <td class="computerQuantity">{{Shift.computerQuantity}}</td>
+  <td class="subject_id">{{Shift.subject_id}}</td>
+  <td class="room_id">{{Shift.room_id}}</td>
+  <td class="time">{{Shift.time}}</td>
+  <td class="student_id">{{Shift.student_id}}</td>
+  <td class="term">{{Shift.term}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
       <i class="fas fa-pencil-alt"></i>

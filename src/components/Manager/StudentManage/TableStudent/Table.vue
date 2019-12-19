@@ -22,8 +22,8 @@ export default {
         "Họ tên",
         "Ngày sinh",
         "Giới tính",
+        "Lớp Khóa học",
         "Khoa",
-        "Lớp khóa học",
         ""
       ]
     };

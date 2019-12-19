@@ -2,14 +2,11 @@
   <td class="index">
     {{index}}
   </td>
+  <td class="subjectID">
+    <input type="text" class="form-control input-block" v-model="rowData.subjectID" name="subjectID" />
+  </td>
   <td class="name">
     <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
-  </td>
-  <td class="address">
-    <input type="text" class="form-control input-block" v-model="rowData.address" name="address" />
-  </td>
-  <td class="computerQuantity">
-    <input type="number" class="form-control input-block" v-model="rowData.computerQuantity" name="computerQuantity" />
   </td>
   <td class="actions text-center">
     <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
@@ -22,9 +19,8 @@
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
+  <td class="subjectID">{{Subject.subjectID}}</td>
   <td class="name">{{Subject.name}}</td>
-  <td class="address">{{Subject.address}}</td>
-  <td class="computerQuantity">{{Subject.computerQuantity}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
       <i class="fas fa-pencil-alt"></i>
