@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Môn Thi", "Mã Môn Thi", "Sửa/Xóa"],
+      Fields: ["STT", "Môn học", "Mã Môn học", "Sửa/Xóa"],
     };
   },
   methods:{

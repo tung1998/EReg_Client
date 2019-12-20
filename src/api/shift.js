@@ -49,7 +49,7 @@ function createShift({
   })
 }
 
-function updateShift({
+function updateShift(id,{
   subjectID,
   roomID,
   shiftExam,

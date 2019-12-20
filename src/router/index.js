@@ -14,6 +14,7 @@ import UnAcceptedStudent from '@/components/Manager/UnAcceptedStudent/UnAccepted
 import ShiftManage from '@/components/Manager/ShiftManage/ShiftManage.vue'
 import RoomManage from '@/components/Manager/RoomManage/RoomManage.vue'
 import TermManage from '@/components/Manager/TermManage/TermManage.vue'
+import TermSubStuManage from '@/components/Manager/TermSubStuManage/TermSubStuManage.vue'
 import Print from '@/components/Manager/Print/Print.vue'
 //import student component
 import StudentWorkingPage from '@/components/Student/WorkingPage/WorkingPage.vue'
@@ -96,6 +97,11 @@ const router = new Router({
         name: 'termManage',
         path: 'termManage',
         component: TermManage,
+        beforeEnter: beforeEnterManager
+      }, {
+        name: 'termSubStuManage',
+        path: 'termSubStuManage',
+        component: TermSubStuManage,
         beforeEnter: beforeEnterManager
       }],
       beforeEnter: beforeEnterManager

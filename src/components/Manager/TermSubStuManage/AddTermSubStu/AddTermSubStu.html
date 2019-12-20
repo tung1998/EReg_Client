@@ -1,0 +1,81 @@
+<div id="addTermSubStuModal" tabindex="-1" role="dialog" class="modal fade bd-example-modal-lg">
+  <div class="modal-dialog modal-lg" role="document">
+    <section class="card modal-content">
+      <header class="card-header">
+        <div class="card-actions">
+          <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+          <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+        </div>
+        <h2 class="card-title" style="margin: 0; padding: 0; font-weight: bold">THÊM THÔNG TIN</h2>
+      </header>
+      <div class="card-body">
+        <div class="form-group row">
+          <label class="col-sm-3 control-label text-sm-right pt-2">Học kì <span class="required">*</span></label>
+          <div class="col-sm-6" >
+            <div class="input-group">
+            <select id="termID" class="form-control" required="" v-model="termSubStu.termID">
+              <option value="">Chọn học kì</option>
+              <option value="18_19_HKI">18_19_HKI</option>
+              <option value="18_19_HKII">18_19_HKII</option>
+              <option value="19_20_HKI">19_20_HKI</option>
+              <option value="19_20_HKII">19_20_HKII</option>
+            </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label class="col-sm-3 control-label text-sm-right pt-2">Mã môn học <span class="required">*</span></label>
+          <div class="col-sm-6" >
+            <div class="input-group">
+            <select id="subjectID" class="form-control" v-model="termSubStu.subjectID">
+              <option value="INT1101">INT1101</option>
+              <option value="INT3111">INT3111</option>
+              <option value="INT3115">INT3115</option>
+              <option value="INT3202">INT3202</option>
+            </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-3 control-label text-sm-right pt-2">Môn học <span class="required">*</span></label>
+          <div class="col-sm-6" >
+            <div class="input-group">
+            <select id="subjectName" class="form-control" v-model="termSubStu.subjectName">
+              <option value="">Chọn môn học</option>
+              <option value="Xác suất thống kê">Xác suất thống kê</option>
+              <option value="Quản lý dự án">Quản lý dự án</option>
+              <option value="Thiết kế giao diện người dùng">Thiết kế giao diện người dùng</option>
+              <option value="HQT Cơ sở dữ liệu">HQT Cơ sở dữ liệu</option>
+            </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 control-label text-lg-right pt-2">Sinh viên <span class="required">*</span></label>
+          <div class="col-lg-6" >
+            <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>
+              <input type="text" class="form-control" v-model="termSubStu.student">
+          </div>
+          </div>
+        </div>
+        </div>
+     
+      <footer class="card-footer">
+        <div class="row justify-content-end">
+          <div class="col-sm-9">
+            <button class="btn btn-primary" id="submit" @click="addNewTermSubStu">Thêm mới</button>
+            <button type="reset" class="btn btn-default" @click="resetInput">Reset</button>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </div>
+</div>
