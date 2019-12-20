@@ -14,7 +14,10 @@
                   <i class="fas fa-home"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="room.name">
+              <input list="room.name" type="text" class="form-control" v-model="room.name">
+              <datalist id="room.name">
+              <option value="101-G2"></option><option value="102-G2"></option><option value="103-G2"></option><option value="107-G3"></option><option value="201-G2"></option><option value="202-G2"></option><option value="203-G2"></option><option value="204-G2"></option><option value="206-G2"></option><option value="207-G2"></option><option value="208-G2"></option><option value="301-GD2"></option><option value="303-GD2"></option><option value="306-GD2"></option><option value="307-GD2"></option>
+              </datalist>
             </div>
           </div>
         </div>
@@ -28,7 +31,13 @@
                   <i class="fas fa-heart"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="room.address">
+              <input list="room.address" type="text" class="form-control" v-model="room.address">
+              <datalist id="room.address">
+              <option value="Nhà GD2"></option>
+              <option value="Nhà G2"></option>
+              <option value="Nhà E3"></option>
+              <option value="Nhà G3"></option>
+            </datalist>
             </div>
           </div>
         </div>

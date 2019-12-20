@@ -72,7 +72,19 @@
                   <i class="fas fa-tag"></i>
                 </span>
               </span>
-              <input type="text" class="form-control" v-model="student.major">
+              <input list="student.major" type="text" class="form-control" v-model="student.major">
+            <datalist id="student.major">
+            <option value="Công Nghệ Thông Tin"></option>
+            <option value="Hệ Thống Thông Tin"></option>
+            <option value="Điện Tử Viễn Thông"></option>
+            <option value="Vật Lý Kỹ Thuật & Công Nghệ Nano"></option>
+            <option value="Viện Công Nghệ Nông Nghiệp"></option>
+            <option value="Viện Công Nghệ Hàng Không Vũ Trụ"></option>
+            <option value="Bộ Môn Công Nghệ Xây Dựng-Giao Thông"></option>
+            <option value="Khoa Nhật"></option>
+            <option value="Khoa học máy tính"></option>
+
+            </datalist> 
             </div>
           </div>
         </div>
