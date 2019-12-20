@@ -64,7 +64,8 @@ function updateShift(id,{
   shiftExam,
   time,
   studentID,
-  term  }, accessToken)
+  term  
+}, accessToken)
 
   console.log(axios)
     

@@ -58,7 +58,6 @@ function updateTermSubStu(id,{
     subjectName,
     student
 }, accessToken)
-
   console.log(axios)
     
     return axios.put(url,{
