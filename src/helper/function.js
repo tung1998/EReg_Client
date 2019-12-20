@@ -5,7 +5,8 @@ export {
   objectToArray,
   alertNotifyDefaul,
   formatPhoneNumber,
-  handleError
+  handleError,
+  printElem
 }
 
 function objectToArray(obj) {
@@ -82,4 +83,26 @@ function handleError(error) {
   console.log(error)
   alertNotifyDefaul(_ERRORS.somethingWrong)
   return false
+}
+
+function printElem(elem, css='') {
+  let mywindow = window.open('');
+  mywindow.document.write(`
+  <html>
+    <head>
+      ${css} 
+    </head>
+    <body >
+      ${document.getElementById(elem).innerHTML}
+    </body>
+  </html>`);
+  mywindow.document.close(); // necessary for IE >= 10
+  mywindow.focus(); // necessary for IE >= 10*/
+
+  setTimeout(() => {
+    mywindow.print();
+    mywindow.close();
+  }, 500);
+
+  return true;
 }
