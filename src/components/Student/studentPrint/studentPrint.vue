@@ -1,7 +1,7 @@
 <template src='./studentPrint.html'></template>
 
 <script>
-import { printElem } from "../../../helper/function";
+import { printElem, exportFile } from "../../../helper/function";
 
 export default {
   name: "studentPrint",
@@ -16,11 +16,11 @@ export default {
 
 ///methodes
 function exportFileButtonClick() {
-  exportFile('print-area')
+  exportFile("print-area");
 }
 
 function printFileButtonClick() {
-  printElem('print-area')
+  printElem("print-area");
 }
 </script>
 
