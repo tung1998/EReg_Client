@@ -22,8 +22,8 @@ export default {
         "Họ tên",
         "Ngày sinh",
         "Giới tính",
-        "Khoa",
         "Lớp khóa học",
+        "Khoa",
         "Sửa/Xóa"
       ],
       searchInput: "",
