@@ -5,7 +5,9 @@ export {
   objectToArray,
   alertNotifyDefaul,
   formatPhoneNumber,
-  handleError
+  handleError,
+  printElem,
+  exportFile
 }
 
 function objectToArray(obj) {
@@ -82,4 +84,48 @@ function handleError(error) {
   console.log(error)
   alertNotifyDefaul(_ERRORS.somethingWrong)
   return false
+}
+
+function printElem(elem, css='') {
+  let mywindow = window.open('');
+  mywindow.document.write(`
+  <html>
+    <head>
+      ${css} 
+    </head>
+    <body >
+      ${document.getElementById(elem).innerHTML}
+    </body>
+  </html>`);
+  mywindow.document.close(); // necessary for IE >= 10
+  mywindow.focus(); // necessary for IE >= 10*/
+
+  setTimeout(() => {
+    mywindow.print();
+    mywindow.close();
+  }, 500);
+
+  return true;
+}
+
+
+function exportFile(id) {
+  var header =
+    "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+    "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+    "xmlns='http://www.w3.org/TR/REC-html40'>" +
+    "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+  var footer = "</body></html>";
+  var sourceHTML =
+    header + document.getElementById(id).innerHTML + footer;
+
+  var source =
+    "data:application/vnd.ms-word;charset=utf-8," +
+    encodeURIComponent(sourceHTML);
+  var fileDownload = document.createElement("a");
+  document.body.appendChild(fileDownload);
+  fileDownload.href = source;
+  fileDownload.download = "document.doc";
+  fileDownload.click();
+  document.body.removeChild(fileDownload);
 }
