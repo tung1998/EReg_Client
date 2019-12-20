@@ -1,16 +1,96 @@
-<div>
-  <section class="card">
-    <header class="card-header">
-      <div class="card-actions">
-        <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-        <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-      </div>
+<section class="card">
+  <header class="card-header"> 
+      <h2 class="card-title">Quản lý chung</h2>
+  </header>
+      <div class="card-body">
+          <div class="form-group row">
+              <label class="col-sm-3 control-label text-sm-right pt-2">Học kì</label>
+              <div class="col-sm-4">
+                  <select id="" class="form-control" title="Please select at least one company" required="">
+                      <option >Chọn học kì</option>
+                      <option>2019-2020-HKI</option>
+                      <option>2019-2020-HK phụ I</option>
+                      <option>2019-2020-HKII</option>
+                      <option>2019-2020-HK phụ II</option>
+                  </select>
+              </div>
+          </div>
 
-      <h2 class="card-title">QUẢN LÝ CHUNG</h2>
-    </header>
-    <div class="card-body">
-      <TableTermSubStu :TermSubStuList="TermSubStuList"/>
-    </div>
+          <div class="form-group row">
+              <label class="col-sm-3 control-label text-sm-right pt-2">Môn học</label>
+              <div class="col-sm-4">
+                  <select id="" class="form-control" title="Please select at least one company" required="">
+                      <option value="">Chọn môn học</option>
+                      <option value="apple">Quản lý dự án</option>
+                      <option value="google">LT hướng đối tượng</option>
+                      <option value="microsoft">Cơ sở dữ liệu</option>
+                      <option value="yahoo">Mạng máy tính</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+<!----------------------------------------------------->       
+                   
+      <div class="card">
+          <header class="card-header"> 
+              <h2 class="card-title"> Danh sách sinh viên</h2>
+          </header>
+          <div class="card-body">
+            <div class="card-body">
+              <div id="datatable-editable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-lg-6"><div class="dataTables_length" id="datatable-editable_length"></div></div>
+              <div class="col-lg-6"><div data-v-23b8ee9d="" class="input-group"></div></div></div><div class="table-responsive"><table class="table table-bordered table-striped mb-0 dataTable no-footer" id="datatable-editable" role="grid">
+                  <thead>
+                      <tr role="row">
+                          <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px; text-align: center;">
+                              STT
+                          </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 155px; text-align: center;">
+                              MSSV
+                          </th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 171.333px; text-align: center;">
+                              Họ và tên
+                          </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 171.333px; text-align: center;">
+                              Ngày sinh
+                          </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 150.333px; text-align: center;">
+                              Giới tính
+                          </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 180.333px; text-align: center;" >
+                              Khoa
+                          </th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 171.333px; text-align: center;">
+                              Lớp khóa học
+                          </th></tr>
+                  </thead>
+                  <tbody>
+                     <tr role="row" class="odd">
+                          <td class="sorting_1">1</td>
+                          <td>19021199</td>
+                          <td>Nguyễn Thị Thảo</td>
+                          <td>03/12/2001</td>
+                          <td>Nữ</td>
+                          <td>Công nghệ thông tin</td>
+                          <td>K64</td>                        
+                      </tr>
+                      <tr role="row" class="odd">
+                          <td class="sorting_1">2</td>
+                          <td>19021199</td>
+                          <td>Nguyễn Thị Thảo</td>
+                          <td>03/12/2001</td>
+                          <td>Nữ</td>
+                          <td>Công nghệ thông tin</td>
+                          <td>K64</td>                        
+                    </tr>
+                    <tr role="row" class="odd">
+                          <td class="sorting_1">3</td>
+                          <td>19021199</td>
+                          <td>Nguyễn Thị Thảo</td>
+                          <td>03/12/2001</td>
+                          <td>Nữ</td>
+                          <td>Công nghệ thông tin</td>
+                          <td>K64</td>                        
+                    </tr>                   
+                                       
+                  </tbody>
+              </table></div>
+          </div>
+          </div>
+          </div>
+     </div>
   </section>
-  <AddTermSubStuModal @addTermSubStu="addTermSubStu"/>
-</div>
+  

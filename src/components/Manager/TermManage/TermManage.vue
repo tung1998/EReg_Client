@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     addTerm,
+    reloadTable: created
   },
   created
 };
