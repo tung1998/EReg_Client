@@ -2,10 +2,6 @@
   <div class="modal-dialog modal-lg" role="document">
     <section class="card modal-content">
       <header class="card-header">
-        <div class="card-actions">
-          <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-          <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-        </div>
         <h2 class="card-title">THÊM MÔN HỌC</h2>
       </header>
       <div class="card-body">
@@ -13,6 +9,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Mã môn học <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-qrcode"></i>
+                </span>
+              </span>
               <input type="text" class="form-control" v-model="subject.subjectID">
             </div>
           </div>
@@ -22,6 +23,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Tên môn học <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-list-alt"></i>
+                </span>
+              </span>
               <input type="text" class="form-control" v-model="subject.name">
             </div>
           </div>

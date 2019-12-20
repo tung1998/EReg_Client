@@ -2,10 +2,6 @@
   <div class="modal-dialog modal-lg" role="document">
     <section class="card modal-content">
       <header class="card-header">
-        <div class="card-actions">
-          <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-          <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-        </div>
         <h2 class="card-title" style="margin: 0; padding: 0; font-weight: bold">THÊM THÔNG TIN</h2>
       </header>
       <div class="card-body">
@@ -13,6 +9,11 @@
           <label class="col-sm-3 control-label text-sm-right pt-2">Học kì <span class="required">*</span></label>
           <div class="col-sm-6" >
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-tasks"></i>
+                </span>
+              </span>
             <select id="termID" class="form-control" required="" v-model="termSubStu.termID">
               <option value="">Chọn học kì</option>
               <option value="18_19_HKI">18_19_HKI</option>
@@ -28,12 +29,12 @@
           <label class="col-sm-3 control-label text-sm-right pt-2">Mã môn học <span class="required">*</span></label>
           <div class="col-sm-6" >
             <div class="input-group">
-            <select id="subjectID" class="form-control" v-model="termSubStu.subjectID">
-              <option value="INT1101">INT1101</option>
-              <option value="INT3111">INT3111</option>
-              <option value="INT3115">INT3115</option>
-              <option value="INT3202">INT3202</option>
-            </select>
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-qrcode"></i>
+                </span>
+              </span>
+            <input type="text" class="form-control" v-model="termSubStu.subjectID">
             </div>
           </div>
         </div>
@@ -42,6 +43,11 @@
           <label class="col-sm-3 control-label text-sm-right pt-2">Môn học <span class="required">*</span></label>
           <div class="col-sm-6" >
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-list-alt"></i>
+                </span>
+              </span>
             <select id="subjectName" class="form-control" v-model="termSubStu.subjectName">
               <option value="">Chọn môn học</option>
               <option value="Xác suất thống kê">Xác suất thống kê</option>
@@ -59,7 +65,7 @@
             <div class="input-group">
               <span class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-calendar-alt"></i>
+                  <i class="fas fa-user"></i>
                 </span>
               </span>
               <input type="text" class="form-control" v-model="termSubStu.student">

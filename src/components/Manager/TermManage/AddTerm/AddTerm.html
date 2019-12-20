@@ -2,10 +2,6 @@
   <div class="modal-dialog modal-lg" role="document">
     <section class="card modal-content">
       <header class="card-header">
-        <div class="card-actions">
-          <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
-          <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
-        </div>
         <h2 class="card-title">THÊM HỌC KÌ </h2>
       </header>
       <div class="card-body">
@@ -15,7 +11,7 @@
             <div class="input-group">
               <span class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-check"></i>
+                  <i class="fas fa-tasks"></i>
                 </span>
               </span>
             <select class="form-control mb-6"  v-model="term.name">
@@ -32,6 +28,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Thời gian bắt đầu <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>              
               <input type="date" class="form-control" v-model="term.startTime">
             </div>
           </div>
@@ -41,6 +42,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Thời gian kết thúc <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar-alt"></i>
+                </span>
+              </span>              
               <input type="date" class="form-control" v-model="term.endTime">
             </div>
           </div>
@@ -50,6 +56,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Môn học <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-list-alt"></i>
+                </span>
+              </span>                
               <input type="text" class="form-control" v-model="term.subject">
             </div>
           </div>
@@ -59,6 +70,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Ngày bắt đầu đăng kí <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar"></i>
+                </span>
+              </span>             
               <input type="date" class="form-control" v-model="term.registSTime">
             </div>
           </div>
@@ -68,6 +84,11 @@
           <label class="col-lg-3 control-label text-lg-right pt-2">Ngày kết thúc đăng kí <span class="required">*</span></label>
           <div class="col-lg-6">
             <div class="input-group">
+              <span class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-calendar"></i>
+                </span>
+              </span>            
               <input type="date" class="form-control" v-model="term.registETime">
             </div>
           </div>
