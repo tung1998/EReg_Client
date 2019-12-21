@@ -77,13 +77,3 @@ function mounted() {
 
 <style>
 </style>
-
-
-<!---
-    if (item.name.toLowerCase().includes(searchText)) return true;
-    if (item.startTime.toLowerCase().includes(searchText)) return true;
-    if (item.endTime.toLowerCase().includes(searchText)) return true;
-    if (item.subject.toLowerCase().includes(searchText)) return true;
-    if (item.registSTime.toLowerCase().includes(searchText)) return true;
-    if (item.registETime.toLowerCase().includes(searchText)) return true;
----->
