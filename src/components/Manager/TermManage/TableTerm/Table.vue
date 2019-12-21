@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Học kì", "Thời gian bắt đầu", "Thời gian kết thúc", "Môn học", "Ngày bắt đầu đăng kí","Ngày kết thúc đăng kí", "Sửa/Xóa"],
+      Fields: ["STT", "Học kì", "Thời gian bắt đầu", "Thời gian kết thúc", "Ngày bắt đầu đăng kí","Ngày kết thúc đăng kí", "Sửa/Xóa"],
       searchInput: "",
       TermSearch: []
     };

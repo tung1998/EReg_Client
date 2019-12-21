@@ -4,14 +4,15 @@
 <script>
 import AddTermModal from "./AddTerm/AddTerm.vue";
 import TableTerm from "./TableTerm/Table";
-import { getAllTerm } from '../../../api/term';
-import { handleError } from '../../../helper/function';
+import TableTermSubject from "./TableTermSubject/Table";
+import { getAllTerm } from "../../../api/term";
+import { handleError } from "../../../helper/function";
 
-let accessToken 
+let accessToken;
 
 export default {
   name: "TermManage",
-  components: { AddTermModal, TableTerm },
+  components: { AddTermModal, TableTerm, TableTermSubject },
   data() {
     return {
       TermList: [],
@@ -26,14 +27,16 @@ export default {
 };
 
 //methods
-function addTerm(data){
-  this.TermList.push(data)
+function addTerm(data) {
+  this.TermList.push(data);
 }
 //cycleHook
 function created() {
-  getAllTerm(this.$cookies.get('accessToken')).then(result=>{
-    this.TermList = result.data
-  }).catch(handleError)
+  getAllTerm(this.$cookies.get("accessToken"))
+    .then(result => {
+      this.TermList = result.data;
+    })
+    .catch(handleError);
 }
 </script>
 
