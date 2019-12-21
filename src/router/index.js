@@ -9,8 +9,6 @@ import ManagerWorkingPage from '@/components/Manager/WorkingPage/WorkingPage.vue
 import ManagerProfile from '@/components/Manager/Profile/Profile.vue'
 import StudentManage from '@/components/Manager/StudentManage/StudentManage.vue'
 import SubjectManage from '@/components/Manager/SubjectManage/SubjectManage.vue'
-import AcceptedStudent from '@/components/Manager/AcceptedStudent/AcceptedStudent.vue'
-import UnAcceptedStudent from '@/components/Manager/UnAcceptedStudent/UnAcceptedStudent.vue'
 import ShiftManage from '@/components/Manager/ShiftManage/ShiftManage.vue'
 import RoomManage from '@/components/Manager/RoomManage/RoomManage.vue'
 import TermManage from '@/components/Manager/TermManage/TermManage.vue'
@@ -67,16 +65,6 @@ const router = new Router({
         name: 'subjectManage',
         path: 'subjectManage',
         component: SubjectManage,
-        beforeEnter: beforeEnterManager
-      }, {
-        name: 'acceptedStudent',
-        path: 'acceptedStudent',
-        component: AcceptedStudent,
-        beforeEnter: beforeEnterManager
-      }, {
-        name: 'unAcceptedStudent',
-        path: 'unAcceptedStudent',
-        component: UnAcceptedStudent,
         beforeEnter: beforeEnterManager
       }, {
         name: 'shiftManage',
