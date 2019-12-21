@@ -18,15 +18,6 @@ export default {
 function exportFileButtonClick() {
   exportFile("print-area");
 }
-<<<<<<< HEAD
-=======
-
-function printFileButtonClick() {
-  printElem("print-area");
-}
-
->>>>>>> 754727d1ff850a8365eac00976a0d5d8dae5855a
-
 function printFileButtonClick() {
   printElem("print-area");
 }
