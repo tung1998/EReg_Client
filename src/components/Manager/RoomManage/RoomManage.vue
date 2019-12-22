@@ -7,7 +7,7 @@ import TableRoom from "./TableRoom/Table";
 import { getAllRoom } from '../../../api/room';
 import { handleError } from '../../../helper/function';
 
-let accessToken 
+let accessToken;
 
 export default {
   name: "RoomManage",
@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     addRoom,
+    reloadTable: created
   },
   created
 };
@@ -30,9 +31,11 @@ function addRoom(data){
 }
 //cycleHook
 function created() {
-  getAllRoom(this.$cookies.get('accessToken')).then(result=>{
+  getAllRoom(this.$cookies.get('accessToken'))
+    .then(result=>{
     this.RoomList = result.data
-  }).catch(handleError)
+  })
+  .catch(handleError)
 }
 </script>
 
