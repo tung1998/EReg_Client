@@ -9,7 +9,7 @@
       <h2 class="card-title">QUẢN LÝ PHÒNG THI</h2>
     </header>
     <div class="card-body">
-      <TableRoom :RoomList="RoomList"/>
+      <TableRoom :RoomList="RoomList" @reloadTable="reloadTable"/>
     </div>
   </section>
   <AddRoomModal @addRoom="addRoom"/>
