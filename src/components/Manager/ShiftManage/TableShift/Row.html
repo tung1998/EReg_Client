@@ -3,21 +3,27 @@
     {{index}}
   </td>
   <td class="subjectID">
-    <input type="text" class="form-control input-block" v-model="rowData.subjectID" name="subjectID" />
+    <select v-model="rowData.subjectID" class="form-control mb-6">
+      <option v-for="TermSubStu in TermSubStuList" :value="TermSubStu._id">{{TermSubStu.subjectName}}</option>
+    </select>
   </td>
 
   <td class="shiftExam">
-    <input type="text" class="form-control input-block" v-model="rowData.shiftExam" name="shiftExam" />
-  <td class="time">
-    <input type="text" class="form-control input-block" v-model="rowData.time" name="time" />
-  </td>
+    <select class="form-control mb-6" v-model="rowData.shiftExam">
+      <option value="">Choose a time</option>
+      <option value="1:(7h-9h)">1:7h-9h</option>
+      <option value="2:(9h-11h)">2:9h-11h</option>
+      <option value="3:(13h-15h)">3:13h-15h</option>
+      <option value="4:(15h-17h)">4:15h-17h</option>
+    </select>
   <td class="roomID">
-    <input type="text" class="form-control input-block" v-model="rowData.roomID" name="roomID" />
+    <select v-model="rowData.roomID" class="form-control">
+      <option v-for="Room in RoomList" :value="Room._id">{{Room.name}} - {{Room.computerQuantity}} chỗ ngồi</option>
+    </select>
   </td>
-  <td class="term">
-    <input type="text" class="form-control input-block" v-model="rowData.term" name="term" />
+  <td class="time">
+    <input type="date" class="form-control input-block" v-model="rowData.time" name="time" />
   </td>
-  
   <td class="actions text-center">
     <a class="on-editing save-row" @click="rowSaveClick" title="Lưu thông tin">
       <i class="fas fa-save"></i>
@@ -29,11 +35,10 @@
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
-  <td class="subjectID">{{Shift.subjectID}}</td>
+  <td class="subjectID">{{subject}}</td>
   <td class="term">{{Shift.shiftExam}}</td>
-  <td class="roomID">{{Shift.roomID}}</td>
+  <td class="roomID">{{room}}</td>
   <td class="time">{{Shift.time}}</td>
-  <td class="term">{{Shift.term}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">
       <i class="fas fa-pencil-alt"></i>

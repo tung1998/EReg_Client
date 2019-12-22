@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <TableRow v-for="(Shift,index) in ShiftSearch" :key="index" :Shift="Shift" :index="index"
+        <TableRow v-for="(Shift,index) in ShiftSearch" :key="index" :Shift="Shift" :index="index" :TermSubStuList="TermSubStuList" :termSelect="termSelect" :RoomList="RoomList"
           @deleteShift="deleteShift(index)" />
       </tbody>
     </table>

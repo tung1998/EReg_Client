@@ -11,13 +11,21 @@ export default {
       type: Object,
       default: {}
     },
-    index: Number
+
+    index: Number,
+    termSelect: Object,
+    TermSubStuList: Array,
+    RoomList: Array
   },
   data() {
     return {
       onEditing: false,
       rowData: { ...this.Shift }
     };
+  },
+  computed: {
+    room,
+    subject
   },
   methods: {
     rowClick,
@@ -54,6 +62,15 @@ function rowRemoveClick() {
     .catch(handleError);
 }
 //suportfunction
+
+//computed
+function room(){
+  return this.RoomList.filter(item=>item._id==this.Shift.roomID).map(item=>`${item.name} - ${item.computerQuantity} chỗ ngồi`)[0]
+}
+
+function subject(){
+  return this.TermSubStuList.filter(item=>item._id==this.Shift.subjectID)[0].subjectName
+}
 </script>
 
 <style>

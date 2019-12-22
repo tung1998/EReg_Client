@@ -9,8 +9,23 @@
       <h2 class="card-title">QUẢN LÝ CA THI</h2>
     </header>
     <div class="card-body">
-      <TableShift :ShiftList="ShiftList"/>
+      <div class="form-group row">
+        <label class="col-lg-3 control-label text-lg-right pt-2">Học kì <span class="required">*</span></label>
+        <div class="col-lg-6">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-tasks"></i>
+              </span>
+            </span>
+            <select class="form-control mb-6" v-model="termSelect">
+              <option v-for="item in TermList" :value="item">{{item.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <TableShift v-if="termSelect" :ShiftList="ShiftList" :TermSubStuList="TermSubStuList" :termSelect="termSelect" :RoomList="RoomList"/>
     </div>
   </section>
-  <AddShiftModal @addShift="addShift"/>
+  <AddShiftModal v-if="termSelect" @addShift="addShift" :TermSubStuList="TermSubStuList" :termSelect="termSelect" :RoomList="RoomList"/>
 </div>

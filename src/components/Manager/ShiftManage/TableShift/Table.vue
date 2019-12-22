@@ -11,26 +11,28 @@ export default {
     TableRow
   },
   props: {
-   ShiftList: Array
+    ShiftList: Array,
+    termSelect: Object,
+    TermSubStuList: Array,
+    RoomList: Array
   },
   data() {
     return {
       Fields: [
-        "STT", 
-        "Môn thi", 
-        "Ca thi", 
-        "Phòng thi", 
-        "Thời gian", 
-        "Học kì", 
+        "STT",
+        "Môn thi",
+        "Ca thi",
+        "Phòng thi",
+        "Thời gian",
         "Sửa/Xóa"
       ],
       searchInput: "",
-     ShiftSearch: []
+      ShiftSearch: []
     };
   },
   watch: {
     searchInput: updateTableData,
-   ShiftList: updateTableData
+    ShiftList: updateTableData
   },
   methods: {
     deleteShift
