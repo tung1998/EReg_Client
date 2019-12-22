@@ -57,7 +57,7 @@ function created() {
     .catch(handleError);
   getAllTermSubStu(accessToken)
     .then(result => {
-      this.TermClassList = result.data;
+      this.TermSubStuList = result.data;
     })
     .catch(handleError);
     

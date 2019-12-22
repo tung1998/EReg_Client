@@ -32,8 +32,8 @@
         </tr>
       </thead>
       <tbody>
-        <TableRow v-for="(Term,index) in TermSubStuSearch" :key="index" :Term="Term" :index="index"
-          @deleteTerm="deleteTerm(index)" />
+        <TableRow v-for="(TermSubject,index) in TermSubStuSearch" :key="index" :TermSubject="TermSubject" :index="index" :TermList="TermList" :SubjectList="SubjectList"
+          @deleteSubject="deleteSubject(index)" />
       </tbody>
     </table>
   </div>

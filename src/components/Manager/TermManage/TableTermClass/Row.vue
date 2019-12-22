@@ -3,20 +3,22 @@
 <script>
 import { alertNotifyDefaul, handleError } from "../../../../helper/function";
 import { _ERRORS, _SUCCESS } from "../../../../helper/variable";
-import { deleteOneTerm, updateTerm } from "../../../../api/term";
+import { deleteOneTermSubStu } from "../../../../api/termSubStu";
 export default {
-  name: "TableTermManage",
+  name: "TableSubjectManage",
   props: {
-    Term: {
+    TermSubject: {
       type: Object,
       default: {}
     },
+    TermList: Array,
+    SubjectList: Array,
     index: Number
   },
   data() {
     return {
       onEditing: false,
-      rowData: { ...this.Term }
+      rowData: { ...this.TermSubject }
     };
   },
   methods: {
@@ -25,33 +27,55 @@ export default {
     rowCancelClick,
     rowEditClick,
     rowRemoveClick
-  }
+  },
+  computed: {
+    termName,
+    subjectCode,
+    numberStudent
+  },
+  mounted() {
+    console.log(this)
+  },
 };
 //methods
 function rowClick() {}
 function rowSaveClick() {
-  updateTerm(this.Term._id, this.rowData, this.$cookies.get("accessToken"))
+  updateTermSubject(this.TermSubject._id, this.rowData, this.$cookies.get("accessToken"))
     .then(result => {
-      this.Term = this.rowData;
+      this.TermSubject = this.rowData;
       this.onEditing = !this.onEditing;
       alertNotifyDefaul(_SUCCESS.updateSuccess);
     })
     .catch(handleError);
 }
 function rowCancelClick() {
-  this.rowData = { ...this.Term };
+  this.rowData = { ...this.TermSubject };
   this.onEditing = !this.onEditing;
 }
 function rowEditClick() {
   this.onEditing = !this.onEditing;
 }
 function rowRemoveClick() {
-  deleteOneTerm(this.Term._id, this.$cookies.get("accessToken"))
+  deleteOneTermSubStu(this.TermSubject._id, this.$cookies.get("accessToken"))
     .then(result => {
-      this.$emit("deleteTerm");
+      this.$emit("deleteSubject");
       alertNotifyDefaul(_SUCCESS.deleteSuccess);
     })
     .catch(handleError);
+}
+
+//computed
+function termName(){
+  return this.TermList.filter(item=>item._id==this.TermSubject.termID)[0].name
+}
+
+function subjectCode(){
+  return this.SubjectList.filter(item=>item._id==this.TermSubject.subjectID)[0].subjectCode
+}
+
+function numberStudent(){
+  if(!this.TermSubject.studentList) return 0
+  return this.TermSubject.studentList.length
 }
 //suportfunction
 </script>

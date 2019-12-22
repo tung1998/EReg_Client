@@ -13,16 +13,11 @@ export default {
   props: {
     TermSubStuList: Array,
     TermList: Array,
+    SubjectList: Array
   },
   data() {
     return {
-      Fields: [
-        "STT",
-        "Môn học",
-        "Mã",
-        "Số lượng học sinh",
-        "Sửa/Xóa"
-      ],
+      Fields: ["STT", "Môn học", "Mã", "Số lượng học sinh", "Sửa/Xóa"],
       searchInput: "",
       TermSubStuSearch: [],
       termSelect: ""
@@ -34,14 +29,14 @@ export default {
     termSelect: termSelectChange
   },
   methods: {
-    deleteTerm,
+    deleteSubject,
     uploadFile
   },
   mounted
 };
 
 //methods
-function deleteTerm(index) {
+function deleteSubject(index) {
   this.TermSubStuList.splice(index, 1);
 }
 
@@ -65,30 +60,38 @@ function uploadFile() {
 
 // computed
 function updateTableData() {
-  console.log(this.TermSubStuList)
-  let choosenTerm = this.TermSubStuList.filter(
-    item => item._id == this.termSelect
-  )[0];
-  // console.log(choosenTerm, this.subjectSearch);
-  // this.subjectSearch = choosenTerm.subject ? choosenTerm.subject : [];
-  // let searchText = this.searchInput.toLowerCase();
-  // this.subjectSearch = choosenTerm.subject.filter(item => {
-  //   if (item.name.toLowerCase().includes(searchText)) return true;
-  //   if (item.startTime.toLowerCase().includes(searchText)) return true;
-  //   if (item.endTime.toLowerCase().includes(searchText)) return true;
-  //   if (item.registSTime.toLowerCase().includes(searchText)) return true;
-  //   if (item.registETime.toLowerCase().includes(searchText)) return true;
-  //   return false;
-  // });
+  let termSelect = this.termSelect;
+  let searchText = this.searchInput.toLowerCase();
+  this.TermSubStuSearch = this.TermSubStuList.filter(
+    item => item.termID == termSelect
+  ).filter(item => {
+    if (item.subjectName.toLowerCase().includes(searchText)) return true;
+    return false;
+  });
 }
 
-
-function termSelectChange(){
-  this.$emit('termSelectChange', this.termSelect)
+function termSelectChange() {
+  this.$emit("termSelectChange", this.termSelect);
+  let termSelect = this.termSelect;
+  let searchText = this.searchInput.toLowerCase();
+  this.TermSubStuSearch = this.TermSubStuList.filter(
+    item => item.termID == termSelect
+  ).filter(item => {
+    if (item.subjectName.toLowerCase().includes(searchText)) return true;
+    return false;
+  });
 }
 
 function mounted() {
   this.TermSubStuSearch = this.TermSubStuList;
+  let termSelect = this.termSelect;
+  let searchText = this.searchInput.toLowerCase();
+  this.TermSubStuSearch = this.TermSubStuList.filter(
+    item => item.termID == termSelect
+  ).filter(item => {
+    if (item.subjectName.toLowerCase().includes(searchText)) return true;
+    return false;
+  });
 }
 //support function
 </script>
