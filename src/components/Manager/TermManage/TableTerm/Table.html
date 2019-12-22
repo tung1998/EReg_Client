@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <TableRow v-for="(Term,index) in TermList" :key="index" :Term="Term" :index="index"
+        <TableRow v-for="(Term,index) in TermSearch" :key="index" :Term="Term" :index="index"
           @deleteTerm="deleteTerm(index)" />
       </tbody>
     </table>

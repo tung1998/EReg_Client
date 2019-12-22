@@ -2,8 +2,8 @@
   <td class="index">
     {{index}}
   </td>
-  <td class="subjectID">
-    <input type="text" class="form-control input-block" v-model="rowData.subjectID" name="subjectID" />
+  <td class="subjectCode">
+    <input type="text" class="form-control input-block" v-model="rowData.subjectCode" name="subjectCode" />
   </td>
   <td class="name">
     <input type="text" class="form-control input-block" v-model="rowData.name" name="name" />
@@ -19,7 +19,7 @@
 </tr>
 <tr v-else role="row" class="odd" @click="rowClick" title="Chi tiết">
   <td class="index">{{index}}</td>
-  <td class="subjectID">{{Subject.subjectID}}</td>
+  <td class="subjectCode">{{Subject.subjectCode}}</td>
   <td class="name">{{Subject.name}}</td>
   <td class="actions text-center">
     <a class="on-default edit-row" @click="rowEditClick" title="Chỉnh sửa thông tin">

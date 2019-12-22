@@ -13,7 +13,6 @@ export default {
         name: "",
         startTime: "",
         endTime: "",
-        subject: "",
         registSTime: "",
         registSTime: ""
       }
@@ -26,13 +25,12 @@ export default {
 };
 
 function addNewTerm() {
-  if (this.term.name && this.term.startTime && this.term.endTime && this.term.subject && this.term.registSTime && this.term.registETime) {
+  if (this.term.name && this.term.startTime && this.term.endTime && this.term.registSTime && this.term.registETime) {
     createTerm(
       {
         name: this.term.name,
         startTime: this.term.startTime,
         endTime: this.term.endTime,
-        subject: this.term.subject,
         registSTime: this.term.registSTime,
         registETime: this.term.registETime
       },
@@ -43,7 +41,6 @@ function addNewTerm() {
         this.term.name = "";
         this.term.startTime = "";
         this.term.endTime = "";
-        this.term.subject = "";
         this.term.registSTime = "";
         this.term.registETime = "";
         alertNotifyDefaul(_SUCCESS.createSuccess);
@@ -56,7 +53,6 @@ function resetInput() {
   this.term.name = "";
   this.term.startTime = "";
   this.term.endTime = "";
-  this.term.subject = "";
   this.term.registSTime = "";
   this.term.registETime = "";      
 }

@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       subject: {
-        subjectID: "",
+        subjectCode: "",
         name: "",
       }
     };
@@ -22,17 +22,18 @@ export default {
 };
 
 function addNewSubject() {
-  if (this.subject.subjectID && this.subject.name) {
+  console.log(this.subject.subjectCode, this.subject.name)
+  if (this.subject.subjectCode && this.subject.name) {
     createSubject(
       {
-        subjectID: this.subject.subjectID,
+        subjectCode: this.subject.subjectCode,
         name: this.subject.name
       },
       this.$cookies.get("accessToken")
     )
       .then(result => {
         this.$emit("addSubject", result.data);
-        this.subject.subjectID = "";
+        this.subject.subjectCode = "";
         this.subject.name = "";
         alertNotifyDefaul(_SUCCESS.createSuccess);
       })
@@ -41,7 +42,7 @@ function addNewSubject() {
 }
 
 function resetInput() {
-  this.subject.subjectID = "";
+  this.subject.subjectCode = "";
   this.subject.name = "";
 }
 </script>

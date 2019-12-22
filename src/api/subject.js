@@ -29,11 +29,11 @@ function getSubjectByID(id,accessToken){
 }
 
 function createSubject({
-  subjectID,
+  subjectCode,
   name
 }, accessToken){
     return axios.post(BASE_SUBJECT,{
-      subjectID,
+      subjectCode,
       name
     },{
       headers: {
@@ -42,18 +42,13 @@ function createSubject({
   })
 }
 
-function updateSubject({
-  subjectID,
+function updateSubject(id, {
+  subjectCode,
   name
 }, accessToken){
   let url = `${BASE_SUBJECT}/${id}`
-  console.log(url,{
-    subjectID,
-    name
-  }, accessToken)
-  console.log(axios)
     return axios.put(url,{
-      subjectID, 
+      subjectCode, 
       name
     }, {
       headers: {

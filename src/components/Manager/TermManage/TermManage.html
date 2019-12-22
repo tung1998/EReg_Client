@@ -23,9 +23,10 @@
       <h2 class="card-title">Quản lý lớp học trong học kì</h2>
     </header>
     <div class="card-body">
-      <TableTermSubject :TermList="TermList"/>
+      <TableTermClass :TermList="TermList" :TermSubStuList="TermSubStuList" @termSelectChange="termSelectChange"/>
     </div>
   </section>
 
   <AddTermModal @addTerm="addTerm"/>
+  <AddTermClassModal v-if="currentTerm" :SubjectList="SubjectList" :currentTerm="currentTerm" @addTermClass="addTermClass"/>
 </div>
