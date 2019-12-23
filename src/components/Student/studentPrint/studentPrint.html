@@ -2,7 +2,23 @@
   <div style="margin-bottom: 20px; margin-top:0;"
     class="form-actions form-actions-padding-sm form-actions-padding-md form-actions-padding-lg">
   </div>
-  <div id="print-area">
+  <div class="form-group row">
+    <label class="col-lg-3 control-label text-lg-right pt-2">Học kì <span class="required">*</span></label>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fas fa-tasks"></i>
+          </span>
+        </span>
+        <select class="form-control mb-6" v-model="termSelect">
+          <option v-for="item in TermList" :value="item">{{item.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="print-area" v-if="termSelect" class="mt-5">
     <table style="width: 100%; border: none; border-collapse: collapse;">
       <tbody>
         <tr>
@@ -53,58 +69,23 @@
         <tr>
           <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align:center;">STT</th>
           <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Tên môn học</th>
-          <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Mã môn học</th>
+          <!-- <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Mã môn học</th> -->
           <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Thời gian</th>
           <th
             style="border-top: 1px solid #000; border-left: 1px solid #000; border-right:1px solid #000; text-align: center;">
             Phòng thi</th>
         </tr>
-        <tr>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">1</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Các hệ thống
-            thương mại điện tử</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;INT3506</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Ca 4: 15h-17h Ngày
-            24/12/2019</td>
+        <tr v-for="(shiftData, index) in shiftDataList">
+          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">{{index +1}}</td>
+          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">
+            &nbsp;{{shiftData.subject}}</td>
+          <!-- <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">
+            &nbsp;{{shiftData.subjectCode}}</td> -->
+          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">
+            {{shiftData.shiftExam}}</td>
           <td
             style="border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
-            103-G2</td>
-        </tr>
-        <tr>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">2</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Các hệ thống
-            thương mại điện tử</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;INT3506</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Ca 4: 15h-17h Ngày
-            24/12/2019</td>
-          <td
-            style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; border-right: 1px solid #000; text-align: center; ">
-            103-G2</td>
-
-        </tr>
-        <tr>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">2</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Các hệ thống
-            thương mại điện tử</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;INT3506</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Ca 4: 15h-17h Ngày
-            24/12/2019</td>
-          <td
-            style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; border-right: 1px solid #000; text-align: center; ">
-            103-G2</td>
-
-        </tr>
-        <tr>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">2</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Các hệ thống
-            thương mại điện tử</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;INT3506</td>
-          <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Ca 4: 15h-17h Ngày
-            24/12/2019</td>
-          <td
-            style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; border-right: 1px solid #000; text-align: center; ">
-            103-G2</td>
-
+            {{shiftData.room}}</td>
         </tr>
         <tr>
           <td
@@ -112,9 +93,9 @@
             &nbsp;</td>
           <td style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000;">&nbsp;
           </td>
-          <td
+          <!-- <td
             style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; text-align: center; ">
-            &nbsp;</td>
+            &nbsp;</td> -->
           <td
             style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; text-align: center;">
           </td>
@@ -145,7 +126,7 @@
       </tbody>
     </table>
   </div>
-  <div style="margin-bottom: 0;"
+  <div v-if="termSelect" style="margin-bottom: 0;"
     class="form-actions form-actions-padding-sm form-actions-padding-md form-actions-padding-lg">
     <button @click="printFileButtonClick" class="btn-print-this btn btn-primary"><i class="icon-print"></i> In kết
       quả</button>
