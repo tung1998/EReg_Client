@@ -48,21 +48,9 @@
 
             <ul class="nav nav-main">
               <li class="nav-parent">
-                <router-link class="nav-link" :to="{name: 'termSubStuManage'}">
-                  <i class="fas fa-home" aria-hidden="true"></i>
-                  <span>Quản lý chung</span>
-                </router-link>
-              </li>
-              <li class="nav-parent">
                 <router-link class="nav-link" :to="{name: 'termManage'}">
                   <i class="fas fa-tasks" aria-hidden="true"></i>
                   <span>Quản lý học kì</span>
-                </router-link>
-              </li>
-              <li class="nav-parent">
-                <router-link class="nav-link" :to="{name:'studentManage'}">
-                  <i class="fas fa-users" aria-hidden="true"></i>
-                  <span>Quản lý sinh viên</span>
                 </router-link>
               </li>
               <li class="nav-parent">
@@ -71,6 +59,15 @@
                   <span>Quản lý môn học</span>
                 </router-link>
               </li>
+              <li class="nav-parent">
+                <router-link class="nav-link" :to="{name: 'termSubStuManage'}">
+                  <i class="fas fa-book" aria-hidden="true"></i>
+                  <span>Học kỳ - Môn học</span>
+                </router-link>
+              </li>
+              
+              
+              
               <li class="nav-parent">
                 <router-link class="nav-link" :to="{name: 'RoomManage'}">
                   <i class="fas fa-laptop" aria-hidden="true"></i>
@@ -87,6 +84,12 @@
                 <router-link class="nav-link" :to="{name: 'print'}">
                   <i class="fas fa-print" aria-hidden="true"></i>
                   <span>In danh sách thi</span>
+                </router-link>
+              </li>
+              <li class="nav-parent">
+                <router-link class="nav-link" :to="{name:'studentManage'}">
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                  <span>Quản lý sinh viên</span>
                 </router-link>
               </li>
             </ul>

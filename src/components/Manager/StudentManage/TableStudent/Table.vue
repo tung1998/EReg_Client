@@ -69,12 +69,12 @@ function uploadFile() {
 function updateTableData() {
   let searchText = this.searchInput.toLowerCase()
   this.StudentSearch = this.StudentList.filter(item => {
-    if (item.studentID.toLowerCase().includes(searchText)) return true;
-    if (item.name.toLowerCase().includes(searchText)) return true;
-    if (item.dateOfBirth.toLowerCase().includes(searchText)) return true;
-    if (item.sex.toLowerCase().includes(searchText)) return true;
-    if (item.major.toLowerCase().includes(searchText)) return true;
-    if (item.classMajor.toLowerCase().includes(searchText)) return true;
+    if (item.studentCode&&item.studentCode.toLowerCase().includes(searchText)) return true;
+    if (item.name&&item.name.toLowerCase().includes(searchText)) return true;
+    if (item.dateOfBirth&&item.dateOfBirth.toLowerCase().includes(searchText)) return true;
+    if (item.sex&&item.sex.toLowerCase().includes(searchText)) return true;
+    if (item.major&&item.major.toLowerCase().includes(searchText)) return true;
+    if (item.classMajor&&item.classMajor.toLowerCase().includes(searchText)) return true;
     return false;
   });
 }
