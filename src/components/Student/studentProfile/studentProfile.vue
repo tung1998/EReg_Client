@@ -4,6 +4,13 @@
 <script>
 export default {
   name: "WorkingPage",
+  data() {
+    return {
+      student: {
+        name: "Hoàng Thị Yếnsadsadsad"
+      }
+    }
+  },
 };
 
 
