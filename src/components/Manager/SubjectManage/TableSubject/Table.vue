@@ -17,7 +17,7 @@ export default {
     return {
       Fields: [
         "STT", 
-        "Mã Môn học", 
+        "Mã môn học", 
         "Môn học", 
         "Sửa/Xóa"
       ],

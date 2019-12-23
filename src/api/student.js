@@ -38,7 +38,7 @@ function createStudent({
   classMajor,
   address,
   phone,
-  email
+  email,
 }, accessToken) {
   return axios.post(BASE_STUDENT, {
     studentID,
@@ -104,7 +104,9 @@ function importFile(formData, accessToken) {
     },
   })
 }
-function getCurrentInfo(accessToken) {
+
+
+function getCurrentInfo(accessToken){
   let url = `${BASE_STUDENT}/currentInfo`
   return axios.get(url, {
     headers: {

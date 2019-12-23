@@ -5,6 +5,7 @@
 import { handleError } from "../../../helper/function";
 import { getCurrentInfo } from "../../../api/student";
 export default {
+
   name: "studentProfile",
   data() {
     return {         
@@ -15,7 +16,6 @@ export default {
   },
   created
 };
-
 
 function created() {
   let accessToken = this.$cookies.get("accessToken");
