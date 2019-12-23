@@ -11,7 +11,8 @@ export default {
     return {         
         name:"",
         MSSV:"",
-        major:""
+        major:"",
+        classMajor: ""
     };
   },
   created
@@ -25,6 +26,7 @@ function created() {
       console.log(result)
       this.name = result.data;
       this.MSSV = result.data;
+      this.classMajor = result.data;
       this.major = result.data;
       console.log(this.name);
     })
