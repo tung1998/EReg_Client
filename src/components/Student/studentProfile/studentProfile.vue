@@ -9,10 +9,7 @@ export default {
   name: "studentProfile",
   data() {
     return {         
-        name:"",
-        MSSV:"",
-        major:"",
-        classMajor: ""
+        studentSelect: ""
     };
   },
   created
@@ -24,10 +21,7 @@ function created() {
   getCurrentInfo(accessToken)
     .then(result => {
       console.log(result)
-      this.name = result.data;
-      this.MSSV = result.data;
-      this.classMajor = result.data;
-      this.major = result.data;
+      this.studentSelect = result.data;
       console.log(this.name);
     })
     .catch(handleError);
