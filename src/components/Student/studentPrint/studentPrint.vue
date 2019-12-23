@@ -6,6 +6,7 @@ import { getAllTerm } from "../../../api/term";
 import { getRegisterShiftByTerm } from "../../../api/shift";
 import { getAllRoom } from "../../../api/room";
 import { getAllTermSubStu } from "../../../api/termSubStu";
+import { getCurrentInfo } from "../../../api/student";
 
 export default {
   name: "studentPrint",
@@ -15,7 +16,12 @@ export default {
       shiftDataList: [],
       RoomList: [],
       TermSubStuList: [],
-      termSelect: ""
+      termSelect: "",
+      name:"",
+      MSSV:"",
+      major:"",
+      classMajor:"",
+      date:""
     };
   },
   methods: {
@@ -53,6 +59,18 @@ function created() {
     .then(result => {
       this.TermSubStuList = result.data;
       console.log(result.data);
+    })
+    .catch(handleError);
+  getCurrentInfo(accessToken)
+    .then(result => {
+      console.log(result)
+      this.name = result.data;
+      this.MSSV = result.data;
+      this.classMajor = result.data;
+      this.major = result.data;
+      this.date = result.data;
+
+      console.log(this.name);
     })
     .catch(handleError);
 }
