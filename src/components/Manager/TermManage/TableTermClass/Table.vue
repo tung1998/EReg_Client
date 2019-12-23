@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      Fields: ["STT", "Môn học", "Mã", "Số lượng học sinh", "Sửa/Xóa"],
+      Fields: ["STT", "Môn học", "Mã", "Số lượng sinh viên", "Sửa/Xóa"],
       searchInput: "",
       TermSubStuSearch: [],
       termSelect: ""

@@ -17,8 +17,8 @@ export default {
     return {
       Fields: [
         "STT", 
+        "Mã môn học", 
         "Môn học", 
-        "Mã Môn học", 
         "Sửa/Xóa"
       ],
       searchInput: "",

@@ -61,6 +61,12 @@
                   </router-link>
                 </li>
                 <li class="nav-parent">
+                  <router-link class="nav-link" :to="{name: 'studentProfile'}">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Thông tin sinh viên</span>
+                  </router-link>
+                </li>
+                <li class="nav-parent">
                   <router-link class="nav-link" :to="{name:'registerExam'}">
                     <i class="fas fa-tasks" aria-hidden="true"></i>
                     <span>Đăng ký thi</span>
@@ -70,12 +76,6 @@
                   <router-link class="nav-link" :to="{name: 'studentPrint'}">
                     <i class="fas fa-print" aria-hidden="true"></i>
                     <span>In phiếu thi</span>
-                  </router-link>
-                </li>
-                <li class="nav-parent">
-                  <router-link class="nav-link" :to="{name: 'studentProfile'}">
-                    <i class="fas fa-users" aria-hidden="true"></i>
-                    <span>Thông tin sinh viên</span>
                   </router-link>
                 </li>
               </ul>

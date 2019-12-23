@@ -29,9 +29,11 @@
                             <p class="card-subtitle">Thông tin về sinh viên thuộc khóa học 2019-2020 trường Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
                         </header>
                         <div class="card-body">
-                            <p>Họ và tên: {{student.name}}</p>
-                            <p>Thư điện tử: 17021144@vnu.edu.vn</p>
-                            <p>Khoa: Công nghệ thông tin</p>
+
+                            <p>Họ và tên: {{name.name}}</p>
+                            <p>MSSV: {{MSSV.studentID}}</p>
+                            <p>Lớp: {{classMajor.classMajor}}</p>
+                            <p>Khoa: {{major.major}}</p>
                         </div>
                     </section>
  
@@ -86,7 +88,7 @@
                         </header>
                         <div class="card-body">
                             Lần truy cập cuối cùng vào khóa học </br>
-                            Monday, 16 December 2019, 1:14 AM  (hiện thời)
+                            Monday, 16 December 2019, 1:14 AM 
                         </div>
                     </section>
 
@@ -181,18 +183,6 @@
                         </form>
                     </div>
                 </div>
-                <hr data-v-fd06fca2="" class="dotted tall"> 
-                <h4 data-v-fd06fca2="" class="mb-3">Change Password</h4> 
-                <div data-v-fd06fca2="" class="form-row">
-                    <div data-v-fd06fca2="" class="form-group col-md-5">
-                        <label data-v-fd06fca2="" for="inputPassword4">New Password</label> 
-                        <input data-v-fd06fca2="" type="password" id="inputPassword4" placeholder="Password" class="form-control">
-                    </div> 
-                    <div data-v-fd06fca2="" class="form-group col-md-5">
-                        <label data-v-fd06fca2="" for="inputPassword4">Re New Password</label> 
-                        <input data-v-fd06fca2="" type="password" id="inputPassword4" placeholder="Password" class="form-control">
-                    </div>
-                </div> 
                 <div data-v-fd06fca2="" class="form-row">
                     <div data-v-fd06fca2="" class="col-md-10 text-right mt-3">
                         <button data-v-fd06fca2="" class="btn btn-primary modal-confirm">Save</button>
