@@ -85,7 +85,7 @@ function termSubStuSelectChange() {
 }
 
 function shiftSelectChange() {
-  getStudent(this.shiftSelect, this.$cookies.get("accessToken")).then(
+  getStudent(this.shiftSelect._id, this.$cookies.get("accessToken")).then(
     result => {
       this.StudentList = result.data;
     }
