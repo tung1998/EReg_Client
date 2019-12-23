@@ -1,4 +1,3 @@
-
 <section class="card">
   <header class="card-header">
     <h2 class="card-title">Chọn thông tin</h2>
@@ -7,12 +6,8 @@
     <div class="form-group row">
       <label class="col-sm-3 control-label text-sm-right pt-2">Học kì</label>
       <div class="col-sm-4">
-        <select id="" class="form-control" title="Please select at least one company" required="">
-          <option>Chọn học kì</option>
-          <option>2019-2020-HKI</option>
-          <option>2019-2020-HK phụ I</option>
-          <option>2019-2020-HKII</option>
-          <option>2019-2020-HK phụ II</option>
+        <select id="" class="form-control" title="Please select at least one company" v-model="termSelect">
+          <option v-for="term in TermList" :value="term._id">{{term.name}}</option>
         </select>
       </div>
     </div>
@@ -20,12 +15,8 @@
     <div class="form-group row">
       <label class="col-sm-3 control-label text-sm-right pt-2">Môn thi</label>
       <div class="col-sm-4">
-        <select id="" class="form-control" title="Please select at least one company" required="">
-          <option value="">Chọn môn thi</option>
-          <option value="apple">Quản lý dự án</option>
-          <option value="google">LT hướng đối tượng</option>
-          <option value="microsoft">Cơ sở dữ liệu</option>
-          <option value="yahoo">Mạng máy tính</option>
+        <select class="form-control" title="Please select at least one company" v-model="termSubStuSelect">
+          <option v-for="termSubStu in TermSubStuList" :value="termSubStu._id">{{termSubStu.subjectName}}</option>
         </select>
       </div>
     </div>
@@ -33,25 +24,9 @@
     <div class="form-group row">
       <label class="col-sm-3 control-label text-sm-right pt-2">Ca thi</label>
       <div class="col-sm-4">
-        <select id="" class="form-control" title="Please select at least one company" required="">
-          <option>Chọn ca thi</option>
-          <option>1 (từ 7h-9h)</option>
-          <option>2 (từ 9h30-11h30)</option>
-          <option>3 (từ 13h-15h)</option>
-          <option>4 (từ 15h30-17h30)</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label class="col-sm-3 control-label text-sm-right pt-2">Phòng thi</label>
-      <div class="col-sm-4">
-        <select id="" class="form-control" title="Please select at least one company" required="">
-          <option>Chọn phòng thi</option>
-          <option>201-G2</option>
-          <option>202-G2</option>
-          <option>305-G2</option>
-          <option>313-G2</option>
+        <select id="" class="form-control" title="Please select at least one company" v-model="shiftSelect">
+          <option v-for="shift in ShiftListFilter" :value="shift._id">{{shift.room}}-{{shift.shiftExam}}-{{shift.time}}
+          </option>
         </select>
       </div>
     </div>
@@ -114,7 +89,6 @@
           <tbody>
             <tr>
               <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align:center;">STT</th>
-              <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">SBD</th>
               <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Mã số sinh viên
               </th>
               <th style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">Họ tên</th>
@@ -123,53 +97,15 @@
                 style="border-top: 1px solid #000; border-left: 1px solid #000; border-right:1px solid #000; text-align: center;">
                 Lớp khóa học</th>
             </tr>
-            <tr>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">1</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;29</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;17021144
+            <tr v-for="(student, index) in StudentList">
+              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">{{index+1}}</td>
+              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;{{student.studentID}}
               </td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Hoàng Thị
-                Oanh</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">02/09/1999</td>
+              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;{{student.name}}</td>
+              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">{{student.dateOfBirth}}</td>
               <td
                 style="border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
-                QH-2017-CC</td>
-            </tr>
-            <tr>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">2</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;34</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;17020987
-              </td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Trần Duy
-                Khánh</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">02/09/1999</td>
-              <td
-                style="border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
-                QH-2017-CC</td>
-            </tr>
-            <tr>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">3</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;90</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;17021144
-              </td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Hoàng Thị
-                Yến</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">02/09/1999</td>
-              <td
-                style="border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
-                QH-2017-CC</td>
-            </tr>
-            <tr>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">4</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;12</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;17020222
-              </td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000;text-align: center;">&nbsp;Nguyễn Thị
-                Nhi</td>
-              <td style="border-top: 1px solid #000; border-left: 1px solid #000; text-align: center;">02/09/1999</td>
-              <td
-                style="border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;">
-                QH-2017-CC</td>
+                {{student.major}}</td>
             </tr>
             <tr>
               <td
@@ -182,9 +118,9 @@
               <td
                 style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; text-align: center; ">
                 &nbsp;</td>
-              <td
+              <!-- <td
                 style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; text-align: center;">
-              </td>
+              </td> -->
               <td
                 style="border-top: 1px solid #000; border-left: 1px solid #000; border-bottom: 1px solid #000; border-right: 1px solid #000; text-align: center; ">
                 &nbsp;</td>
