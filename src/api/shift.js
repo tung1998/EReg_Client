@@ -8,7 +8,8 @@ export {
   deleteOneShift,
   getAvaiableShift,
   registerShift,
-  getRegisterShiftByTerm
+  getRegisterShiftByTerm,
+  getStudent
 }
 
 let BASE_SHIFT = `${process.env.BASE_URL}/shifts`
@@ -108,6 +109,15 @@ function registerShift(shiftID, accessToken) {
 
 function getRegisterShiftByTerm(shiftID, accessToken) {
   let url = `${BASE_SHIFT}/getRegisterShiftByTerm/${shiftID}`
+  return axios.get(url, {
+    headers: {
+      accessToken
+    },
+  })
+}
+
+function getStudent(shiftID, accessToken) {
+  let url = `${BASE_SHIFT}/getStudent/${shiftID}`
   return axios.get(url, {
     headers: {
       accessToken
