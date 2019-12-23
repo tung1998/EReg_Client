@@ -18,6 +18,7 @@ export default {
   components: { AddShiftModal, TableShift },
   data() {
     return {
+      ShiftListAll: [],
       ShiftList: [],
       TermList: [],
       TermSubStuListAll: [],
@@ -45,7 +46,7 @@ function created() {
   let accessToken = this.$cookies.get("accessToken");
   getAllShift(accessToken)
     .then(result => {
-      this.ShiftList = result.data;
+      this.ShiftListAll = result.data;
     })
     .catch(handleError);
   getAllTerm(accessToken)
@@ -67,6 +68,7 @@ function created() {
 
 function termSelectChange(){
   this.TermSubStuList = this.TermSubStuListAll.filter(item=>item.termID == this.termSelect._id)
+  this.ShiftList = this.ShiftListAll.filter(shift=>this.TermSubStuList.map(item=>item._id).includes(shift.subjectID))
 }
 </script>
 

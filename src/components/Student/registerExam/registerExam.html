@@ -35,21 +35,22 @@
                   aria-label="Browser: activate to sort column ascending" style="width: 171.333px;">
                   Ca thi/Ngày thi
                 </th>
-                <th class="sorting" rowspan="1" colspan="1" aria-label="Actions" style="width: 21.3333px;">
-                  Chọn
-                </th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(subjectShift, index) in subjectShiftList" :key="index" role="row" class="odd">
                 <td class="sorting_1">{{index}}</td>
                 <td>{{subjectShift.subjectName}}</td>
-                <td><select class="form-control mb-30" @change="timeChange" v-model="subjectShift.choosenShift">
-                    <option value="">Choose a time</option>
-                    <option v-for="(Shift, index) in subjectShift.shiftInfor" :value="Shift.shifID">{{Shift.room}} - {{Shift.shiftTime}}</option>
-                  </select></td>
-                <td>
-                  <input type="checkbox">
+                <td><select v-if="isDisabled" disabled class="form-control mb-30 subject" @change="timeChange"
+                    v-model="subjectShift.choosenShift">
+                    <option v-for="(Shift, index) in subjectShift.shiftInfor" :value="Shift.shifID">{{Shift.room}} -
+                      {{Shift.shiftTime}}</option>
+                  </select>
+                  <select v-else class="form-control mb-30 subject" @change="timeChange"
+                    v-model="subjectShift.choosenShift">
+                    <option v-for="(Shift, index) in subjectShift.shiftInfor" :value="Shift.shifID">{{Shift.room}} -
+                      {{Shift.shiftTime}}</option>
+                  </select>
                 </td>
               </tr>
             </tbody>

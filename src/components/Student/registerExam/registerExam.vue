@@ -2,11 +2,12 @@
 
 <!--<script src="./Login.js"></script>-->
 <script>
-import { getAvaiableShift } from "../../../api/shift";
+import { getAvaiableShift, registerShift } from "../../../api/shift";
 import { getAllRoom } from "../../../api/room";
 import { getAllTermSubStu } from "../../../api/termSubStu";
 import { getCurrentInfo } from "../../../api/student";
-import { handleError } from "../../../helper/function";
+import { handleError, alertNotifyDefaul } from "../../../helper/function";
+import { _SUCCESS } from "../../../helper/variable";
 export default {
   name: "registerExam",
   data() {
@@ -14,7 +15,8 @@ export default {
       subjectShiftList: [],
       TermSubStuList: [],
       RoomList: [],
-      StudentID: ""
+      StudentID: "",
+      isDisabled: false
     };
   },
   methods: {
@@ -26,7 +28,7 @@ export default {
 function created() {
   let accessToken = this.$cookies.get("accessToken");
   getCurrentInfo(accessToken).then(result => {
-    console.log(result);
+    this.StudentID = result.data._id;
   });
   getAllTermSubStu(accessToken)
     .then(result => {
@@ -41,56 +43,83 @@ function created() {
       this.subjectShiftList = transData(
         result.data,
         this.TermSubStuList,
-        this.RoomList
+        this.RoomList,
+        this.StudentID
       );
+      console.log(this.subjectShiftList);
     })
     .catch(handleError);
 }
 
-function transData(shift, TermSubStuList, RoomList) {
-  let subject = [];
-  shift.forEach(item => {
-    if (
-      subject
-        .map(item => {
-          item.subjectID;
-        })
-        .includes(item.subjectID)
-    ) {
-      console.log(shift.studentID);
-      if (shift.studentID.includes)
-        subject
-          .filter(item => item.subjectID == item.subjectID)[0]
-          .shiftInfor.push({
-            shifID: item._id,
-            shiftTime: `Ngày ${item.time} ca ${item.shiftExam}`,
-            roomID: item.roomID
-          });
-    } else {
-      console.log(item.studentID);
-      subject.push({
-        subjectID: item.subjectID,
-        subjectName: TermSubStuList.filter(
-          item => item.subjectID == item.subjectID
-        )[0].subjectName,
-        shiftInfor: [
-          {
-            shifID: item._id,
-            shiftTime: `Ngày ${item.time} ca ${item.shiftExam}`,
-            roomID: item.roomID,
-            room: RoomList.filter(room => room._id == item.roomID).map(
-              item => `${item.name}-${item.address}`
-            )[0]
-          }
-        ]
+function transData(shifts, TermSubStuList, RoomList, StudentID) {
+  let subjectID = [];
+  let subjectList = [];
+  shifts.forEach(shift => {
+    if (subjectID.includes(shift.subjectID)) {
+      let subject = subjectList.filter(
+        item => item.subjectID == shift.subjectID
+      )[0];
+      if (shift.studentID && shift.studentID.includes(StudentID))
+        subject.choosenShift == shift._id;
+      subject.shiftInfor.push({
+        shifID: shift._id,
+        shiftTime: `Ngày ${shift.time} ca ${shift.shiftExam}`,
+        roomID: shift.roomID,
+        room: RoomList.filter(room => room._id == shift.roomID).map(
+          room => `${room.name}-${room.address}`
+        )[0]
       });
+    } else {
+      subjectID.push(shift.subjectID);
+      if (shift.studentID && shift.studentID.includes(StudentID))
+        subjectList.push({
+          subjectID: shift.subjectID,
+          subjectName: TermSubStuList.filter(
+            termSubStu => termSubStu._id == shift.subjectID
+          )[0].subjectName,
+          choosenShift: shift._id,
+          shiftInfor: [
+            {
+              shifID: shift._id,
+              shiftTime: `Ngày ${shift.time} ca ${shift.shiftExam}`,
+              roomID: shift.roomID,
+              room: RoomList.filter(room => room._id == shift.roomID).map(
+                room => `${room.name}-${room.address}`
+              )[0]
+            }
+          ]
+        });
+      else
+        subjectList.push({
+          subjectID: shift.subjectID,
+          subjectName: TermSubStuList.filter(
+            termSubStu => termSubStu._id == shift.subjectID
+          )[0].subjectName,
+          shiftInfor: [
+            {
+              shifID: shift._id,
+              shiftTime: `Ngày ${shift.time} ca ${shift.shiftExam}`,
+              roomID: shift.roomID,
+              room: RoomList.filter(room => room._id == shift.roomID).map(
+                room => `${room.name}-${room.address}`
+              )[0]
+            }
+          ]
+        });
     }
   });
-  return subject;
+  return subjectList;
 }
 
-function timeChange() {
-  console.log(this.subjectShiftList);
+function timeChange(ev) {
+  let shiftID = $(ev.target).val();
+  this.isDisabled = true;
+  registerShift(shiftID, this.$cookies.get("accessToken"))
+    .then(result => {
+      alertNotifyDefaul(_SUCCESS.updateSuccess);
+      this.isDisabled = false;
+    })
+    .catch(handleError);
 }
 </script>
 

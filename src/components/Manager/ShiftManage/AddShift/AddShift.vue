@@ -30,7 +30,7 @@ export default {
 };
 
 function addNewShift() {
-  console.log(this);
+  console.log(this.termSelect);
   if (
     this.shift.subjectID &&
     this.shift.shiftExam &&
