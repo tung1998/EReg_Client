@@ -6,7 +6,8 @@ export {
   createStudent,
   updateStudent,
   deleteOneStudent,
-  importFile
+  importFile,
+  getCurrentInfo
 }
 
 let BASE_STUDENT = `${process.env.BASE_URL}/students`
@@ -97,6 +98,15 @@ function deleteOneStudent(id, accessToken) {
 function importFile(formData, accessToken) {
   let url = `${BASE_STUDENT}/importFile`
   return axios.post(url, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      accessToken
+    },
+  })
+}
+function getCurrentInfo(accessToken) {
+  let url = `${BASE_STUDENT}/currentInfo`
+  return axios.get(url, {
     headers: {
       'Content-Type': 'multipart/form-data',
       accessToken
