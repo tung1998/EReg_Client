@@ -2,7 +2,7 @@
 
 <script>
 import { printElem, exportFile, handleError } from "../../../helper/function";
-import { getAllTerm } from "../../../api/term";
+import { getAllTerm, getTermByID } from "../../../api/term";
 import { getAllShift, getStudent } from "../../../api/shift";
 import { getAllRoom } from "../../../api/room";
 import { getAllTermSubStu } from "../../../api/termSubStu";

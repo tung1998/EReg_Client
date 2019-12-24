@@ -4,7 +4,7 @@
   </header>
   <div class="card-body">
     <div class="form-group row">
-      <label class="col-sm-3 control-label text-sm-right pt-2">Học kì</label>
+      <label class="col-sm-3 control-label text-sm-right pt-2">Học kì <span class="required">*</span></label>
       <div class="col-sm-4">
         <select id="" class="form-control" title="Please select at least one company" v-model="termSelect">
           <option v-for="term in TermList" :value="term._id">{{term.name}}</option>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-3 control-label text-sm-right pt-2">Môn thi</label>
+      <label class="col-sm-3 control-label text-sm-right pt-2">Môn thi <span class="required">*</span></label>
       <div class="col-sm-4">
         <select class="form-control" title="Please select at least one company" v-model="termSubStuSelect">
           <option v-for="termSubStu in TermSubStuList" :value="termSubStu._id">{{termSubStu.subjectName}}</option>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-3 control-label text-sm-right pt-2">Ca thi</label>
+      <label class="col-sm-3 control-label text-sm-right pt-2">Ca thi <span class="required">*</span></label>
       <div class="col-sm-4">
         <select id="" class="form-control" title="Please select at least one company" v-model="shiftSelect">
           <option v-for="shift in ShiftListFilter" :value="shift">{{shift.room}}-{{shift.shiftExam}}-{{shift.time}}
@@ -63,23 +63,23 @@
           style="text-align: center; text-transform: uppercase; font-weight: bold; font-size: 16pt; margin: 30px 0 0 0; padding: 0;">
           DANH SÁCH THI</h1>
         <h6 style="text-align: center; font-weight: bold; margin: 0; padding: 0; font-size: 14pt;">
-          Ngày 12 tháng 10 năm 2019
+          Ngày 24 tháng 12 năm 2019
         </h6>
         <table style="width: 70%; border: none; border-collapse: collapse; margin-top: 30px;">
           <tbody>
             <tr>
               <td>Học kì:</td>
-              <td><b>19-20-HKI</b></td>
+              <td><b>{{termSelect.name}} </b></td>
               <td>Môn thi:</td>
-              <td><b>Tất cả</b></td>
+              <td><b> </b></td>
             </tr>
             <tr>
               <td>Ca thi:</td>
-              <td><b>Ca 1: 7h-9h</b></td>
+              <td><b> </b></td>
               <td>Phòng thi:</td>
-              <td><b>217-G2</b></td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td><b> </b></td>
+            
+            
             </tr>
           </tbody>
         </table>
@@ -131,10 +131,10 @@
           <tbody>
             <tr>
               <td style="width: 50%; vertical-align: top; text-align: center;">
-                <h6 style="font-weight: bold; margin: 0; padding: 0; font-size: 12pt; text-transform:uppercase;">Giáo
+                <h6 style="font-weight: bold; margin: 0; padding: 0; font-size: 12pt; text-transform:uppercase;">Giảng
                   viên</h6>
                 <p style="margin: 0; padding: 0; font-size: 11pt; font-style: italic;">(Ký và ghi rõ họ tên)</p>
-                <p style="margin-top:80px;"><b>Hoàng Thị Yến</b></p>
+                <p style="margin-top:80px;"><b></b></p>
               </td>
               <td style="width: 50%; text-align: center; vertical-align: top; ">
                 <h6 style="font-size: 12pt; margin:0; padding:0;">Hà Nội, ngày ..... tháng ..... năm 2019</h6>

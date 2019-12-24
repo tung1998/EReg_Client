@@ -39,7 +39,7 @@
             </thead>
             <tbody>
               <tr v-for="(subjectShift, index) in subjectShiftList" :key="index" role="row" class="odd">
-                <td class="sorting_1">{{index}}</td>
+                <td class="sorting_1">{{index+1}}</td>
                 <td>{{subjectShift.subjectName}}</td>
                 <td><select v-if="isDisabled" disabled class="form-control mb-30 subject" @change="timeChange"
                     v-model="subjectShift.choosenShift">
